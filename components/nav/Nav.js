@@ -15,31 +15,39 @@ import { Menu } from "antd";
 const Nav = () => {
   const { SubMenu } = Menu;
   return (
-    <>
-      <nav>
-        <Row></Row>
-      </nav>
+    <nav>
       <Menu className={Style.menu} mode="horizontal">
         <div className={Style.menuLeftGroup}>
-          <Menu.Item className={Style.menuItem} icon={<HomeOutlinedIcon />}>
+          <Menu.Item
+            key="Home"
+            className={Style.menuItem}
+            icon={<HomeOutlinedIcon />}
+          >
             <Link href="/">Home</Link>
           </Menu.Item>
           <Menu.Item
+            key="Products"
             className={Style.menuItem}
             icon={<ShoppingCartOutlinedIcon />}
           >
             <Link href="/Products">Products </Link>
           </Menu.Item>
-          <Menu.Item className={Style.menuItem} icon={<CategoryOutlinedIcon />}>
+          <Menu.Item
+            key="Categories"
+            className={Style.menuItem}
+            icon={<CategoryOutlinedIcon />}
+          >
             <Link href="/Categories">Categories</Link>
           </Menu.Item>
           <Menu.Item
+            key="About"
             className={Style.menuItem}
             icon={<HelpOutlineOutlinedIcon />}
           >
             <Link href="/About">About</Link>
           </Menu.Item>
           <Menu.Item
+            key="Contact"
             className={Style.menuItem}
             icon={<PhoneEnabledOutlinedIcon />}
           >
@@ -47,7 +55,7 @@ const Nav = () => {
           </Menu.Item>
         </div>
         <div className={Style.menuCenterGroup}>
-          <Menu.Item>
+          <Menu.Item key="Logo">
             <Link passHref={true} href="/">
               <a>
                 {" "}
@@ -62,12 +70,14 @@ const Nav = () => {
         </div>
         <div className={Style.menuRightGroup}>
           <Menu.Item
+            key="sign"
             className={Style.menuItem}
             icon={<AccountCircleOutlinedIcon />}
           >
             <Link href="/login">sign in</Link>
           </Menu.Item>
           <Menu.Item
+            key="Cart"
             className={Style.menuItem}
             icon={<AddShoppingCartOutlinedIcon />}
           >
@@ -75,7 +85,7 @@ const Nav = () => {
           </Menu.Item>
         </div>
       </Menu>
-    </>
+    </nav>
   );
 };
 
