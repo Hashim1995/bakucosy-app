@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Row, Col } from "antd";
+import Modal from "antd/lib/modal";
 import Style from "./Nav.module.scss";
+import { useState } from "react";
 import Image from "next/image";
 import logo from "../../assets/images/logo-black.png";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -11,51 +12,66 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
-import { Menu } from "antd";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useSelector } from "react-redux";
 const Nav = () => {
-  const { SubMenu } = Menu;
+  const mobile = useSelector((state) => state.isMobile.value);
+  const [mobileModal, setMobileModal] = useState(false);
+  const menuOnMobile = (
+    <div className={Style.menuLeftGroupMobile}>
+      <Link className="menuItemOnMobile" href="/">
+        Home
+      </Link>
+      <Link className="menuItemOnMobile" href="/">
+        Products
+      </Link>
+      <Link className="menuItemOnMobile" href="/">
+        Categories
+      </Link>
+      <Link className="menuItemOnMobile" href="/">
+        About
+      </Link>
+      <Link className="menuItemOnMobile" href="/">
+        Contact
+      </Link>
+    </div>
+  );
   return (
-    <nav>
-      <Menu className={Style.menu} mode="horizontal">
-        <div className={Style.menuLeftGroup}>
-          <Menu.Item
-            key="Home"
-            className={Style.menuItem}
-            icon={<HomeOutlinedIcon />}
-          >
-            <Link href="/">Home</Link>
-          </Menu.Item>
-          <Menu.Item
-            key="Products"
-            className={Style.menuItem}
-            icon={<ShoppingCartOutlinedIcon />}
-          >
-            <Link href="/Products">Products </Link>
-          </Menu.Item>
-          <Menu.Item
-            key="Categories"
-            className={Style.menuItem}
-            icon={<CategoryOutlinedIcon />}
-          >
-            <Link href="/Categories">Categories</Link>
-          </Menu.Item>
-          <Menu.Item
-            key="About"
-            className={Style.menuItem}
-            icon={<HelpOutlineOutlinedIcon />}
-          >
-            <Link href="/About">About</Link>
-          </Menu.Item>
-          <Menu.Item
-            key="Contact"
-            className={Style.menuItem}
-            icon={<PhoneEnabledOutlinedIcon />}
-          >
-            <Link href="/Contact">Contact</Link>
-          </Menu.Item>
-        </div>
-        <div className={Style.menuCenterGroup}>
-          <Menu.Item key="Logo">
+    <nav className={Style.Nav}>
+      {!mobile ? (
+        <>
+          <div className={Style.menuLeftGroup}>
+            <Link href="/">
+              <div>
+                {" "}
+                Home <HomeOutlinedIcon />
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                {" "}
+                Products <ShoppingCartOutlinedIcon />
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                Categories <CategoryOutlinedIcon />
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                {" "}
+                About <HelpOutlineOutlinedIcon />
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                {" "}
+                Contact <PhoneEnabledOutlinedIcon />
+              </div>
+            </Link>
+          </div>
+          <div className={Style.menuCenterGroup}>
             <Link passHref={true} href="/">
               <a>
                 {" "}
@@ -66,25 +82,56 @@ const Nav = () => {
                 />
               </a>
             </Link>
-          </Menu.Item>
-        </div>
-        <div className={Style.menuRightGroup}>
-          <Menu.Item
-            key="sign"
-            className={Style.menuItem}
-            icon={<AccountCircleOutlinedIcon />}
+          </div>
+          <div className={Style.menuRightGroup}>
+            <Link href="/login">
+              <div>
+                {" "}
+                Sign in <AccountCircleOutlinedIcon />
+              </div>
+            </Link>
+
+            <Link href="/Cart">
+              <div>
+                {" "}
+                Cart <AddShoppingCartOutlinedIcon />
+              </div>
+            </Link>
+          </div>
+        </>
+      ) : (
+        <>
+          <MenuIcon
+            onClick={() => setMobileModal(true)}
+            className={Style.MenuHamburgerIcon}
+          />
+          <Modal
+            className={Style.mobileMenuModal}
+            visible={mobileModal}
+            footer={null}
+            onCancel={() => setMobileModal(false)}
           >
-            <Link href="/login">sign in</Link>
-          </Menu.Item>
-          <Menu.Item
-            key="Cart"
-            className={Style.menuItem}
-            icon={<AddShoppingCartOutlinedIcon />}
-          >
+            {menuOnMobile}
+          </Modal>
+          <div className={Style.menuCenterGroup}>
+            <Link passHref={true} href="/">
+              <a>
+                {" "}
+                <Image
+                  className={Style.navLogo}
+                  alt="baku cosy shop logo"
+                  src={logo}
+                />
+              </a>
+            </Link>
+          </div>
+          <div className={Style.menuRightGroup}>
+            <Link href="/login">Sign in</Link>
+
             <Link href="/Cart">Cart</Link>
-          </Menu.Item>
-        </div>
-      </Menu>
+          </div>
+        </>
+      )}
     </nav>
   );
 };

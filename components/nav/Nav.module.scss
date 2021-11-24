@@ -1,8 +1,9 @@
-.menu {
+.Nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2vw;
+  padding: 0 12vw;
+
 
   .menuLeftGroup,
   .menuCenterGroup,
@@ -12,57 +13,104 @@
     justify-content: center;
     flex: 1;
   }
-  .menuRightGroup{
-      justify-content: flex-end;
+  .menuLeftGroup {
+    justify-content: flex-start;
+    div {
+      display: flex;
+      align-items: center;
+      margin-right: 1vw;
+    }
   }
-  .menuItem{
+  .menuRightGroup {
+    justify-content: flex-end;
+    div {
+      display: flex;
+      align-items: center;
+      margin-left: 1vw;
+    }
+  }
+  .menuLeftGroup,
+  .menuRightGroup {
+    div {
       display: flex;
       align-items: center;
       padding-bottom: 0.5em;
+      color: var(--black);
+      font-size: var(--font-cat);
       border-bottom: 2px solid transparent !important;
-    &:hover, &:active, &:focus{
+      transition: var(--transition);
+      &:hover,
+      &:active,
+      &:focus {
         background-color: transparent !important;
         border-bottom: 2px solid var(--black) !important;
-      ;
+        transition: var(--transition);
+        cursor: pointer;
+      }
     }
-}
-  .menuItem * {
-    color: var(--black);
-    font-size: var(--font-cat);
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--black) !important;
+    div svg {
+      margin-left: 5px;
     }
   }
 }
 
-@media screen and (max-width: 1350px) {
-  .menu {
-    padding: 0 1vw;
+@media screen and (min-width: 1130px) and (max-width: 1400px) {
+  .Nav {
+    padding: 0 6vw;
+  }
+  .menuCenterGroup {
+    order: -1;
+  }
+}
+@media screen and (max-width: 1130px) {
+  .Nav {
+    padding: 0 0.5vw;
     justify-content: center;
-    
+
     .menuLeftGroup,
     .menuCenterGroup,
-    .menuRightGroup
-    {
-        justify-content: flex-start;
+    .menuRightGroup {
+      justify-content: flex-start;
       flex: initial !important;
+      padding: 0 5px;
     }
-    .menuCenterGroup{
-        order: -1;
+    .menuCenterGroup {
+      order: -1;
     }
   }
-  
 }
-@media screen and (max-width: 1130px){
-    .menu{
-        padding : 0;
-        justify-content: center;
-        flex-direction: column;
-        .menuItem{
-            padding: 0 8px 0.5em 8px ;
-            border-bottom: none;
-        }
+@media screen and (max-width: 992px) {
+  .Nav{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 576px){
+  .MenuHamburgerIcon{
+    width: 1.2em;
+    height: 1.2em;
+    cursor: pointer;
+  }
+  .menuRightGroup{
+    justify-content: center;
+     a{
+       font-size: 1.2em;
+       margin: 0 0.5em;
+     }
+  }
+  .menuLeftGroupMobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    a{
+      margin: 1em;
+      font-size: 1.2em;
+      &:hover{
+        transition: var(--transition);
+        color: var(--green);
+        cursor: pointer;
+      }
     }
+  }
+
 }

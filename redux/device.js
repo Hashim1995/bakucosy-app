@@ -5,8 +5,8 @@ export const deviceSlice = createSlice({
     value: false,
   },
   reducers: {
-    detectDevice: (state, action) => {
-      state.value = action.payload;
+    detectDevice: (state) => {
+      state.value = !state.value;
     },
   },
 });

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html,
 body {
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   overflow-x: hidden;
 }
 
@@ -14,19 +14,19 @@ a {
 }
 * {
   box-sizing: border-box;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
-*::selection{
-  background-color: var(--gold)
+*::selection {
+  background-color: var(--gold);
 }
-*::-moz-selection{
-  background-color: var(--gold)
+*::-moz-selection {
+  background-color: var(--gold);
 }
-:root{
-  --letter-spacing-1: 1px; 
-  --letter-spacing-2: 2px; 
-  --letter-spacing-3: 3px; 
-  --letter-spacing-4: 4px; 
+:root {
+  --letter-spacing-1: 1px;
+  --letter-spacing-2: 2px;
+  --letter-spacing-3: 3px;
+  --letter-spacing-4: 4px;
   --transition: 0.3s;
   --radius2: 2px;
   --radius4: 4px;
@@ -37,11 +37,11 @@ a {
   --radiusCircle: 50%;
   --white: white;
   --black: #282828;
-  --grey:  #e1e1e1;
+  --grey: #b1b1b1;
   --green: #05ac92;
   --orange: #dc9814;
   --gold: #c7b3a2;
-  --dark-gold : #928173;
+  --dark-gold: #928173;
   --font-mouse: clamp(12px, calc(-0.875rem + 1vw), 1rem);
   --font-cat: clamp(0.9rem, 0.9rem + 0.1vw, 1.2rem);
   --font-dog: clamp(1.1rem, 1rem + 0.2vw, 2rem);
@@ -50,4 +50,82 @@ a {
   --font-bear: clamp(1.6rem, 1rem + 1.5vw, 3rem);
   --font-elephant: clamp(1.8rem, 1rem + 2vw, 4rem);
   --font-trex: clamp(2rem, 1rem + 3vw, 6rem);
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ant-dropdown {
+    background-color: var(--grey) !important;
+    width: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menuItemOnMobile {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    margin: 1em;
+  }
+}
+
+.ant-carousel .slick-prev {
+  z-index: 99999 !important;
+  left: 3vw !important;
+  display: block;
+  background-color: var(--green) !important;
+  border-radius: var(--radiusCircle);
+  color: var(--white) !important;
+  height: 43px !important;
+  width: 43px !important;
+  border: 1px dashed var(--white) !important;
+}
+
+.ant-carousel .slick-next {
+  z-index: 99999 !important;
+  right: 3vw !important;
+  display: block;
+  background-color: var(--green) !important;
+  border-radius: var(--radiusCircle);
+  color: var(--white) !important;
+  height: 43px !important;
+  width: 43px !important;
+  border: 1px dashed var(--white) !important;
+}
+
+.ant-carousel .slick-prev:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  font-size: 20px;
+}
+.ant-carousel .slick-next::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  font-size: 20px;
 }
