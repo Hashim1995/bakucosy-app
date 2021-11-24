@@ -1,5 +1,26 @@
 .CarouselImg{
     width: 100vw;
-    height: 68vh;
-    object-fit: cover
+    height: 80vh;
+    object-fit: cover;
+   
+    
+}
+.textWrap{
+    position: absolute;
+    left: 20%;
+    top: 35%;
+    max-width: 300px;
+    padding: 1em 3em;
+    background: var(--black);
+    .title{
+        color: var(--white);
+        font-size: 1.8em;
+    }
+    .category{
+        color: var(--grey);
+        font-size: 1.3em;
+        border-bottom: 1px solid var(--grey);
+        display: inline;
+        padding-bottom: 0.3em;
+    }
 }

@@ -16,14 +16,26 @@ const Carousel = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
+
   return (
     <div>
-      <CarouselAnt dots={false} autoplay={true} arrows {...settings}>
+      <CarouselAnt
+        effect="fade"
+        dots={true}
+        autoplay={true}
+        arrows
+        {...settings}
+      >
         {carouselImages.map((item, index) => {
-          console.log(item.img);
           return (
             <div key={index}>
               <img className={Style.CarouselImg} src={item.img.src} alt="" />
+              <div className="container">
+                <div className={Style.textWrap}>
+                  <h3 className={Style.title}>{item.title}</h3>
+                  <h5 className={Style.category}>{item.category}</h5>
+                </div>
+              </div>
             </div>
           );
         })}
