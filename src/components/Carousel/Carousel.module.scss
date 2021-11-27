@@ -2,8 +2,6 @@
     width: 100vw;
     height: 80vh;
     object-fit: cover;
-   
-    
 }
 .textWrap{
     position: absolute;
@@ -22,5 +20,26 @@
         border-bottom: 1px solid var(--grey);
         display: inline;
         padding-bottom: 0.3em;
+    }     
+    
+}
+@media screen and (max-width: 567px){
+    .CarouselImg{
+        height: 35vh;
     }
+    .slick-arrow{
+        display: none !important;
+    }
+    .textWrap{
+        left: 0%;
+        top: 10%;
+        padding: 0.5em;
+        .title{
+            font-size: 1.2em !important;
+        }
+        .category{
+            font-size: 1em !important;
+        }
+    }
+    
 }

@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Nav from "../components/nav/Nav";
-import Carousel from "../components/Carousel/Carousel";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { detectDevice } from "../redux/device";
-
+import Nav from "../src/components/nav/Nav";
+import Carousel from "../src/components/Carousel/Carousel";
+import Header from "../src/components/Header/Header";
 export default function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,6 +21,7 @@ export default function Home() {
       </Head>
       <Nav />
       <Carousel />
+      <Header />
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import Style from "./Carousel.module.scss";
 import { Carousel as CarouselAnt } from "antd";
-import carouselImages from "../../assets/images/carouselImages/carouselImages";
+import carouselImages from "../../utils/carouselImages";
+import { useSelector } from "react-redux";
 const Carousel = () => {
+  const mobile = useSelector((state) => state.isMobile.value);
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return <div className={className} style={{ ...style }} onClick={onClick} />;
@@ -23,7 +25,7 @@ const Carousel = () => {
         effect="fade"
         dots={true}
         autoplay={true}
-        arrows
+        arrows={!mobile}
         {...settings}
       >
         {carouselImages.map((item, index) => {

@@ -1,6 +1,6 @@
-import first from "./1.jpeg";
-import second from "./2.jpeg";
-import third from "./3.jpeg";
+import first from "../assets/images/carouselImages/1.jpeg";
+import second from "../assets/images/carouselImages/2.jpeg";
+import third from "../assets/images/carouselImages/3.jpeg";
 
 const carouselImages = [
   {
