@@ -1,0 +1,19 @@
+.header  .ant-checkbox-wrapper{
+    margin-left: 0 !important;
+    margin: 0.5em 0;
+}
+.header .filterGroup .ant-checkbox-wrapper{
+    padding: 0.4em;
+    width: 100px;
+    border-radius: var(--radius12);
+    display: flex;
+}
+
+.ant-dropdown-placement-bottomLeft{
+    left: 0px !important;
+    right: 0 !important;
+    top: 114px !important;
+    background-color: white !important;
+    padding: 1em !important;
+    width: 100% !important;
+}

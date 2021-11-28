@@ -53,7 +53,31 @@
     }
   }
 }
-
+.categoriesOverlay{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  .categoriesOverlayItems{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 2em;
+    h4{
+      color: var(--grey);
+      &:hover{
+        color: var(--black);
+      }
+    }
+   
+    img{
+      height: 70px;
+      width: 70px;
+      margin-bottom: 1em;
+    }
+  }
+}
 @media screen and (min-width: 1130px) and (max-width: 1400px) {
   .Nav {
     padding: 0 6vw;

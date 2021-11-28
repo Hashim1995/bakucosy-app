@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Modal from "antd/lib/modal";
+import Dropdown from "antd/lib/dropdown";
 import Style from "./Nav.module.scss";
 import { useState } from "react";
 import Image from "next/image";
@@ -13,6 +14,7 @@ import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
+import categories from "../../utils/categories";
 import { useSelector } from "react-redux";
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
@@ -36,6 +38,18 @@ const Nav = () => {
       </Link>
     </div>
   );
+  const categoriesOverlay = (
+    <div className={Style.categoriesOverlay}>
+      {categories.map((category, i) => (
+        <Link key={i} href="/">
+          <div className={Style.categoriesOverlayItems}>
+            <img src={category.img.src} alt="" />
+            <h4>{category.title}</h4>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
   return (
     <nav className={Style.Nav}>
       {!mobile ? (
@@ -53,11 +67,18 @@ const Nav = () => {
                 Products <ShoppingCartOutlinedIcon />
               </div>
             </Link>
+
             <Link href="/">
-              <div>
-                Categories <CategoryOutlinedIcon />
-              </div>
+              <Dropdown
+                className="navbarCategories"
+                overlay={categoriesOverlay}
+              >
+                <div>
+                  Categories <CategoryOutlinedIcon />
+                </div>
+              </Dropdown>
             </Link>
+
             <Link href="/">
               <div>
                 {" "}
