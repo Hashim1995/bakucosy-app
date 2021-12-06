@@ -5,6 +5,7 @@ import { detectDevice } from "../redux/device";
 import Nav from "../src/components/nav/Nav";
 import Carousel from "../src/components/Carousel/Carousel";
 import Header from "../src/components/Header/Header";
+import ItemList from "../src/components/ItemList/ItemList";
 export default function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function Home() {
       <Nav />
       <Carousel />
       <Header />
+      <ItemList />
     </div>
   );
 }

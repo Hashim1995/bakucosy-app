@@ -5,34 +5,34 @@ import interier from "../assets/images/essentials.jpeg";
 import all from "../assets/images/all.jpeg";
 const categories = [
   {
-    title: "Interier",
+    title: "All",
     description: "lorem ipsum lor amer",
     id: 1,
+    img: all,
+  },
+  {
+    title: "Interier",
+    description: "lorem ipsum lor amer",
+    id: 2,
     img: interier,
   },
   {
     title: "Bags&Backpacks",
     description: "lorem ipsum lor amer",
-    id: 2,
+    id: 3,
     img: bags,
   },
   {
     title: "Decoration",
     description: "lorem ipsum lor amer",
-    id: 3,
+    id: 4,
     img: decor,
   },
   {
     title: "Essentials",
     description: "lorem ipsum lor amer",
-    id: 4,
-    img: essentials,
-  },
-  {
-    title: "All",
-    description: "lorem ipsum lor amer",
     id: 5,
-    img: all,
+    img: essentials,
   },
 ];
 export default categories;

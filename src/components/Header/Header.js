@@ -7,7 +7,11 @@ import Col from "antd/lib/col";
 import Checkbox from "antd/lib/checkbox";
 import Radio from "antd/lib/radio";
 import Tag from "antd/lib/tag";
+import { useSelector, useDispatch } from "react-redux";
+import { selectMainCategory } from "../../../redux/selectedMainCategory";
+
 const Header = () => {
+  const dispatch = useDispatch();
   const [searchVisibile, setSearchVisibile] = useState(false);
   const [filterVisibile, setFilterVisibile] = useState(false);
   const [sortValue, setSortValue] = useState(1);
@@ -30,13 +34,24 @@ const Header = () => {
     "Travel",
   ];
 
+  if (typeof window !== "undefined") {
+    searchVisibile || filterVisibile
+      ? (document.getElementById("headerBottom").style.height = "auto")
+      : (document.getElementById("headerBottom").style.height = "0");
+  }
+
   return (
     <div className="container header">
       <section className={Style.wrap}>
         <div className={Style.top}>
           <div className={Style.left}>
             {categories.map((item, index) => (
-              <p key={index}>{item.title} /</p>
+              <p
+                onClick={() => dispatch(selectMainCategory(item.title))}
+                key={index}
+              >
+                {item.title} /
+              </p>
             ))}
           </div>
           <div className={Style.right}>
@@ -58,7 +73,7 @@ const Header = () => {
             </p>
           </div>
         </div>
-        <div className={Style.bottom}>
+        <div className={Style.bottom} id="headerBottom">
           <div
             className={searchVisibile ? Style.showSearch : Style.hiddenSearch}
           >
