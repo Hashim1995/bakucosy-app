@@ -150,7 +150,7 @@ a {
   cursor: pointer;
   color: var(--white);
   background-color: var(--black);
-  font-size: 1.3em;
+  font-size: 1.2em;
   border: 1px solid var(--black);
   outline: none;
   transition: var(--transition4);
@@ -166,7 +166,7 @@ a {
   cursor: pointer;
   color: var(--black);
   background-color: var(--white);
-  font-size: 1.3em;
+  font-size: 1.2em;
   border: 1px solid var(--black);
   transition: var(--transition4);
   outline: none;
@@ -175,5 +175,21 @@ a {
       background-color: var(--black);
       color: var(--white);
       border: 1px solid var(--black);
+  }
+}
+
+.itemModalSlick .slick-prev{
+  left: 50px;
+  z-index: 1;
+  &::before{
+    color: var(--black);
+    font-size: 33px;
+  }
+}
+.itemModalSlick .slick-next{
+right: 50px;
+  &::before{
+    font-size: 33px;
+    color: var(--black);
   }
 }

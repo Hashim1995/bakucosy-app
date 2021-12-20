@@ -110,6 +110,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 2,
@@ -133,6 +134,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 3,
@@ -156,6 +158,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 4,
@@ -179,6 +182,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 5,
@@ -202,6 +206,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 6,
@@ -225,6 +230,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 7,
@@ -248,6 +254,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 8,
@@ -271,6 +278,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 9,
@@ -294,6 +302,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 10,
@@ -317,6 +326,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 11,
@@ -340,6 +350,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 12,
@@ -363,6 +374,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
     ],
     decoration: [
@@ -388,6 +400,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 102,
@@ -411,6 +424,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 103,
@@ -434,6 +448,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 104,
@@ -457,6 +472,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 105,
@@ -480,6 +496,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 106,
@@ -503,6 +520,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 107,
@@ -526,6 +544,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 108,
@@ -549,6 +568,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 109,
@@ -572,6 +592,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 110,
@@ -595,6 +616,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
     ],
     essentials: [
@@ -620,6 +642,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 202,
@@ -643,6 +666,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 203,
@@ -666,6 +690,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 204,
@@ -689,6 +714,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 205,
@@ -712,6 +738,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 206,
@@ -735,6 +762,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 207,
@@ -758,6 +786,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 208,
@@ -781,6 +810,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 209,
@@ -804,6 +834,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 2010,
@@ -827,6 +858,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 2011,
@@ -850,6 +882,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
     ],
     interior: [
@@ -875,6 +908,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 302,
@@ -898,6 +932,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 303,
@@ -921,6 +956,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 303,
@@ -944,6 +980,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 304,
@@ -967,6 +1004,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 305,
@@ -990,6 +1028,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 306,
@@ -1013,6 +1052,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 307,
@@ -1036,6 +1076,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 308,
@@ -1059,6 +1100,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 309,
@@ -1082,6 +1124,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
       {
         id: 3019,
@@ -1105,6 +1148,7 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
+        stockCount: 12,
       },
     ],
   },
