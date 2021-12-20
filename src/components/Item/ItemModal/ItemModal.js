@@ -5,7 +5,7 @@ import { Carousel, Rate } from "antd";
 import Slider from "react-slick";
 const ItemModal = ({ data }) => {
   const { title, imgList, price, about, stockCount, rate } = data;
-  const [qualityVal, setQualityVal] = useState(0);
+  const [qualityVal, setQualityVal] = useState(1);
 
   const settings = {
     dots: false,
@@ -25,7 +25,7 @@ const ItemModal = ({ data }) => {
           </div>
           <div className={Style.leftBottom}>
             <p>{about.description}</p>
-            <Rate value={rate} />
+            <Rate className={Style.rate} value={rate} />
             <div className={Style.btnGroup}>
               <button
                 onClick={() =>
@@ -48,7 +48,7 @@ const ItemModal = ({ data }) => {
             </button>
           </div>
         </Col>
-        <Col className={Style.right} xl={14}>
+        <Col className={Style.right} xl={16}>
           <Slider className="itemModalSlick" {...settings}>
             {imgList.map((item, i) => {
               return (

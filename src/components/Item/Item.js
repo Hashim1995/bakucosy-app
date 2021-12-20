@@ -6,13 +6,20 @@ import ItemModal from "./ItemModal/ItemModal";
 const Item = ({ data }) => {
   const { title, imgList, price } = data;
   const [isModalVisible, setIsModalVisible] = useState(false);
+
   return (
-    <div className={Style.wrap}>
+    <div className={`${Style.wrap}`}>
       <div className={Style.top}>
         <Image
           alt="a"
-          className={Style.img}
+          className={Style.img1}
           src={imgList[0].src}
+          layout="fill"
+        />
+        <Image
+          alt="a"
+          className={Style.img2}
+          src={imgList[1].src}
           layout="fill"
         />
       </div>

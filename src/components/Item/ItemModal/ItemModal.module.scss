@@ -4,20 +4,25 @@
   flex-direction: column;
   .leftTop {
     h1 {
-      font-size: 1.4em;
+      font-size: 1.5em;
       color: var(--black);
     }
     h3 {
-      font-size: 1.2em;
+      font-size: 1.3em;
       color: var(--orange);
     }
   }
   .leftBottom {
     margin-top: auto;
+
     p {
       font-size: 1em;
       color: var(--grey);
       letter-spacing: var(--letter-spacing-1);
+      padding-bottom: 2em;
+    }
+    .rate{
+        margin-bottom: 1em;
     }
     .btnGroup {
       display: flex;
