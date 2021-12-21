@@ -21,19 +21,19 @@ const Nav = () => {
   const [mobileModal, setMobileModal] = useState(false);
   const menuOnMobile = (
     <div className={Style.menuLeftGroupMobile}>
-      <Link className="menuItemOnMobile" href="/">
+      <Link className="menuItemOnMobile" href="#">
         Home
       </Link>
-      <Link className="menuItemOnMobile" href="/">
+      <Link className="menuItemOnMobile" href="#">
         Products
       </Link>
-      <Link className="menuItemOnMobile" href="/">
+      <Link className="menuItemOnMobile" href="#">
         Categories
       </Link>
-      <Link className="menuItemOnMobile" href="/">
+      <Link className="menuItemOnMobile" href="#">
         About
       </Link>
-      <Link className="menuItemOnMobile" href="/">
+      <Link className="menuItemOnMobile" href="#">
         Contact
       </Link>
     </div>
@@ -41,7 +41,7 @@ const Nav = () => {
   const categoriesOverlay = (
     <div className={Style.categoriesOverlay}>
       {categories.map((category, i) => (
-        <Link key={i} href="/">
+        <Link passHref key={i} href="#">
           <div className={Style.categoriesOverlayItems}>
             <img src={category.img.src} alt="" />
             <h4>{category.title}</h4>
@@ -55,20 +55,20 @@ const Nav = () => {
       {!mobile ? (
         <>
           <div className={Style.menuLeftGroup}>
-            <Link href="/">
+            <Link passHref href="#">
               <div>
                 {" "}
                 Home <HomeOutlinedIcon />
               </div>
             </Link>
-            <Link href="/">
+            <Link passHref href="#">
               <div>
                 {" "}
                 Products <ShoppingCartOutlinedIcon />
               </div>
             </Link>
 
-            <Link href="/">
+            <Link passHref href="#">
               <Dropdown
                 className="navbarCategories"
                 overlay={categoriesOverlay}
@@ -79,21 +79,21 @@ const Nav = () => {
               </Dropdown>
             </Link>
 
-            <Link href="/">
+            {/* <Link href="#">
               <div>
                 {" "}
                 About <HelpOutlineOutlinedIcon />
               </div>
             </Link>
-            <Link href="/">
+            <Link href="#">
               <div>
                 {" "}
                 Contact <PhoneEnabledOutlinedIcon />
               </div>
-            </Link>
+            </Link> */}
           </div>
           <div className={Style.menuCenterGroup}>
-            <Link passHref={true} href="/">
+            <Link passHref={true} href="#">
               <a>
                 {" "}
                 <Image
@@ -105,14 +105,14 @@ const Nav = () => {
             </Link>
           </div>
           <div className={Style.menuRightGroup}>
-            <Link href="/login">
+            <Link passHref href="/login">
               <div>
                 {" "}
                 Sign in <AccountCircleOutlinedIcon />
               </div>
             </Link>
 
-            <Link href="/Cart">
+            <Link passHref href="/Cart">
               <div>
                 {" "}
                 Cart <AddShoppingCartOutlinedIcon />
@@ -135,7 +135,7 @@ const Nav = () => {
             {menuOnMobile}
           </Modal>
           <div className={Style.menuCenterGroup}>
-            <Link passHref={true} href="/">
+            <Link passHref={true} href="#">
               <a>
                 {" "}
                 <Image

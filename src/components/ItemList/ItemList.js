@@ -13,7 +13,7 @@ const ItemList = () => {
           </Col>
         ))}
       </Row>
-      <Row gutter={24}>
+      {/* <Row gutter={24}>
         {productList[0].decoration.map((item, index) => (
           <Col key={index} span={6}>
             <Item data={item} />
@@ -33,7 +33,7 @@ const ItemList = () => {
             <Item data={item} />
           </Col>
         ))}
-      </Row>
+      </Row> */}
     </div>
   );
 };
