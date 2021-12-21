@@ -3,7 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 12vw;
-
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+  z-index: 999999;
+  transition: var(--transition4);
 
   .menuLeftGroup,
   .menuCenterGroup,
@@ -52,6 +56,13 @@
       margin-left: 5px;
     }
   }
+}
+.Top{
+    height: 70px;
+  .menuCenterGroup{
+    display: none;
+  }
+ 
 }
 .categoriesOverlay{
   display: flex;

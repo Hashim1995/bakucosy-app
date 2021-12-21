@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import Modal from "antd/lib/modal";
 import Dropdown from "antd/lib/dropdown";
@@ -9,8 +9,6 @@ import logo from "../../assets/images/logo-black.png";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -19,6 +17,20 @@ import { useSelector } from "react-redux";
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
   const [mobileModal, setMobileModal] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  const handleScroll = (e) => {
+    e.target.scrollTop > 300
+      ? setScroll(true)
+      : e.target.scrollTop < 50
+      ? setScroll(false)
+      : null;
+  };
+  useEffect(() => {
+    document.body.addEventListener("scroll", handleScroll);
+    return () => document.body.removeEventListener("scroll", handleScroll);
+  });
+
   const menuOnMobile = (
     <div className={Style.menuLeftGroupMobile}>
       <Link className="menuItemOnMobile" href="#">
@@ -51,7 +63,7 @@ const Nav = () => {
     </div>
   );
   return (
-    <nav className={Style.Nav}>
+    <nav className={`${Style.Nav} ${scroll && Style.Top}`}>
       {!mobile ? (
         <>
           <div className={Style.menuLeftGroup}>
@@ -94,7 +106,7 @@ const Nav = () => {
           </div>
           <div className={Style.menuCenterGroup}>
             <Link passHref={true} href="#">
-              <a>
+              <a className={Style.logoWrap}>
                 {" "}
                 <Image
                   className={Style.navLogo}

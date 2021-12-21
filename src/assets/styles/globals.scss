@@ -127,7 +127,7 @@ a {
 .ant-carousel .slick-prev:before {
   content: "<";
   position: absolute;
-  top: 53%;
+  top: 20%;
   left: 33%;
   font-size: 20px;
   color: var(--white) !important;
@@ -135,7 +135,7 @@ a {
 .ant-carousel .slick-next::before {
   content: ">";
   position: absolute;
-  top: 53%;
+  top: 20%;
   left: 38%;
   font-size: 20px;
 }

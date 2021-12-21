@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Modal } from "antd";
 import { useState } from "react";
 import ItemModal from "./ItemModal/ItemModal";
+import Link from "next/link";
 const Item = ({ data }) => {
   const { title, imgList, price } = data;
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -26,7 +27,9 @@ const Item = ({ data }) => {
 
       <div className={Style.bottom}>
         <div className={Style.info}>
-          <h6>{title}</h6>
+          <Link title={title} href="#">
+            {title}
+          </Link>
           <p>{price}$</p>
         </div>
         <div className={Style.btns}>

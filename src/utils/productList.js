@@ -164,7 +164,7 @@ const productList = [
         id: 4,
         bardocode: "0000000001002",
         title: "Henry Backpack Bag",
-        price: 23.0,
+        price: 13.0,
         rate: 5,
         discount: null,
         about: {
@@ -182,13 +182,13 @@ const productList = [
         isStock: true,
         isNew: true,
         isSale: false,
-        stockCount: 12,
+        stockCount: 6,
       },
       {
         id: 5,
         bardocode: "0000000001002",
         title: "Henry Backpack Bag",
-        price: 23.0,
+        price: 63.0,
         rate: 5,
         discount: null,
         about: {
@@ -212,7 +212,7 @@ const productList = [
         id: 6,
         bardocode: "0000000001002",
         title: "Henry Backpack Bag",
-        price: 23.0,
+        price: 126.5,
         rate: 5,
         discount: null,
         about: {
@@ -236,7 +236,7 @@ const productList = [
         id: 7,
         bardocode: "0000000001002",
         title: "Henry Backpack Bag",
-        price: 23.0,
+        price: 2.5,
         rate: 5,
         discount: null,
         about: {

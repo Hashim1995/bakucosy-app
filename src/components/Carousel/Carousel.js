@@ -23,8 +23,10 @@ const Carousel = () => {
     <div>
       <CarouselAnt
         effect="fade"
-        dots={true}
+        dots={false}
         autoplay={true}
+        swipeToSlide
+        draggable
         arrows={!mobile}
         {...settings}
       >

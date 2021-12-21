@@ -50,7 +50,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      h6 {
+      a {
         color: var(--dark-grey);
         font-size: 1.1em;
         text-overflow: ellipsis;
@@ -58,11 +58,15 @@
         width: 198px;
         white-space: nowrap;
         margin: 0.5em 0 !important;
+        &:hover{
+          color: var(--black);
+        }
       }
       p {
         color: var(--black);
-        font-size: 1.1em;
+        font-size: 1.2em;
         margin: 0.5em 0 !important;
+        letter-spacing: var(--letter-spacing-1);
       }
     }
     .btns {
