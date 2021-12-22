@@ -33,19 +33,19 @@ const Nav = () => {
 
   const menuOnMobile = (
     <div className={Style.menuLeftGroupMobile}>
-      <Link className="menuItemOnMobile" href="#">
+      <Link className="menuItemOnMobile" href="/">
         Home
       </Link>
-      <Link className="menuItemOnMobile" href="#">
+      <Link className="menuItemOnMobile" href="/">
         Products
       </Link>
-      <Link className="menuItemOnMobile" href="#">
+      <Link className="menuItemOnMobile" href="/">
         Categories
       </Link>
-      <Link className="menuItemOnMobile" href="#">
+      <Link className="menuItemOnMobile" href="/">
         About
       </Link>
-      <Link className="menuItemOnMobile" href="#">
+      <Link className="menuItemOnMobile" href="/">
         Contact
       </Link>
     </div>
@@ -67,7 +67,7 @@ const Nav = () => {
       {!mobile ? (
         <>
           <div className={Style.menuLeftGroup}>
-            <Link passHref href="#">
+            <Link passHref href="/">
               <div>
                 {" "}
                 Home <HomeOutlinedIcon />
@@ -105,7 +105,7 @@ const Nav = () => {
             </Link> */}
           </div>
           <div className={Style.menuCenterGroup}>
-            <Link passHref={true} href="#">
+            <Link passHref={true} href="/">
               <a className={Style.logoWrap}>
                 {" "}
                 <Image

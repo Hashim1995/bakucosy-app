@@ -35,9 +35,11 @@ const Header = () => {
   ];
 
   if (typeof window !== "undefined") {
-    searchVisibile || filterVisibile
-      ? (document.getElementById("headerBottom").style.height = "auto")
-      : (document.getElementById("headerBottom").style.height = "0");
+    if (document.getElementById("headerBottom") !== null) {
+      searchVisibile || filterVisibile
+        ? (document.getElementById("headerBottom").style.height = "auto")
+        : (document.getElementById("headerBottom").style.height = "0");
+    }
   }
 
   return (
@@ -77,7 +79,7 @@ const Header = () => {
           <div
             className={searchVisibile ? Style.showSearch : Style.hiddenSearch}
           >
-            <input type="search" name="" placeholder="Search" id="" />
+            <input type="search" placeholder="Search" />
           </div>
           <div
             className={filterVisibile ? Style.filterShow : Style.filterHidden}

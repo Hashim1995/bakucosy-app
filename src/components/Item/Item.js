@@ -4,10 +4,12 @@ import { Modal } from "antd";
 import { useState } from "react";
 import ItemModal from "./ItemModal/ItemModal";
 import Link from "next/link";
-const Item = ({ data }) => {
-  const { title, imgList, price } = data;
-  const [isModalVisible, setIsModalVisible] = useState(false);
+import { v4 as uuidv4 } from "uuid";
 
+const Item = ({ data }) => {
+  const { id, title, imgList, price } = data;
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const uuid = uuidv4();
   return (
     <div className={`${Style.wrap}`}>
       <div className={Style.top}>
@@ -27,7 +29,7 @@ const Item = ({ data }) => {
 
       <div className={Style.bottom}>
         <div className={Style.info}>
-          <Link title={title} href="#">
+          <Link title={title} href={`/product/${[id]}`}>
             {title}
           </Link>
           <p>{price}$</p>
