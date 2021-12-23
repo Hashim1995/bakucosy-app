@@ -82,10 +82,14 @@
          
         }
        
-        .orginal > div.fullscreen{
+        .orginal > div[class*="fullscreen"] > div:nth-child(1)  img{
           
-            display: none;
+          height: 100vh;
           
+        }
+        .orginal > div[class*="fullscreen"] > div:nth-child(2) > div{
+          display: flex;
+          align-items: center;
         }
       }
       

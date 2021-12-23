@@ -68,7 +68,7 @@ const ProductDetail = ({ data }) => {
             </div>
             <div className={Style.leftBottom}>
               <p>{about.description}</p>
-              <Rate className={Style.rate} value={rate} />
+              <Rate disabled className={Style.rate} value={rate} />
               <div className={Style.btnGroup}>
                 <button
                   onClick={() =>
