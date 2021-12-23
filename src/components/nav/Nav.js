@@ -53,7 +53,7 @@ const Nav = () => {
   const categoriesOverlay = (
     <div className={Style.categoriesOverlay}>
       {categories.map((category, i) => (
-        <Link passHref key={i} href="#">
+        <Link passHref key={i} href="/">
           <div className={Style.categoriesOverlayItems}>
             <img src={category.img.src} alt="" />
             <h4>{category.title}</h4>

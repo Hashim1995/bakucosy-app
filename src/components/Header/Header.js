@@ -34,14 +34,6 @@ const Header = () => {
     "Travel",
   ];
 
-  if (typeof window !== "undefined") {
-    if (document.getElementById("headerBottom") !== null) {
-      searchVisibile || filterVisibile
-        ? (document.getElementById("headerBottom").style.height = "auto")
-        : (document.getElementById("headerBottom").style.height = "0");
-    }
-  }
-
   return (
     <div className="container header">
       <section className={Style.wrap}>
@@ -75,7 +67,12 @@ const Header = () => {
             </p>
           </div>
         </div>
-        <div className={Style.bottom} id="headerBottom">
+        <div
+          className={`${Style.bottom} ${
+            searchVisibile || filterVisibile ? Style.auto : Style.zero
+          }`}
+          id="headerBottom"
+        >
           <div
             className={searchVisibile ? Style.showSearch : Style.hiddenSearch}
           >

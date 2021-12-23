@@ -46,18 +46,12 @@
     }
   }
   .bottom{
-    height: 0;
+ 
       .hiddenSearch{
-        transition: transform  0.7s ease-in-out;
-        opacity: 0;
-        transform: scaleY(0);    
-        transform-origin: top;
-       
+        display: none;  
       }
       .showSearch{
-        transform: scaleY(1);    
-        transform-origin: top;
-        transition: transform  0.7s ease-in-out;
+        display: block;
           input{
               width: 100%;
               padding: 1em 1em 1em 0;
@@ -72,15 +66,11 @@
           
       }
       .filterHidden{
-        transition: transform  0.7s ease-in-out;
-        opacity: 0;
-        transform: scaleY(0);    
-        transform-origin: top;
+        display: none;
+        
       }
       .filterShow{
-        transform: scaleY(1);    
-        transform-origin: top;
-        transition: transform  0.7s ease-in-out;
+        display: block;
         .filtersTitle{
             color: var(--black);
             font-weight: bold;
@@ -121,4 +111,11 @@
       }
 
   }
+}
+
+.auto{
+  height: auto;
+}
+.zero{
+  height: 0;
 }
