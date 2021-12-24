@@ -104,7 +104,7 @@ a {
 }
 
 .ant-carousel .slick-prev {
-  z-index: 99999 !important;
+  z-index: 9 ;
   left: 3vw !important;
   display: block;
   background-color: var(--black) !important;
@@ -115,7 +115,7 @@ a {
 }
 
 .ant-carousel .slick-next {
-  z-index: 99999 !important;
+  z-index: 9 ;
   right: 3vw !important;
   display: block;
   background-color: var(--black) !important;
@@ -197,4 +197,13 @@ right: 50px;
 
 .ant-tabs-ink-bar {
   background-color: var(--dark-grey);
+}
+
+div[class*="ant-select"]{
+  box-shadow: none !important;
+
+  *{
+    border-color: var(--light-grey) !important;
+    box-shadow: none !important;
+  }
 }

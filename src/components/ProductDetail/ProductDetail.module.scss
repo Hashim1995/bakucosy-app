@@ -1,7 +1,7 @@
 .main {
   padding: 3em 0;
   background-color: var(--bg-grey);
-  min-height: 80vh;
+  min-height: 60vh;
   .left {
     min-height: 100%;
     display: flex;
@@ -27,6 +27,15 @@
       }
       .rate {
         margin-bottom: 1em;
+      }
+      .labelColor{
+        padding-right: 0.5em;
+      }
+      .badgeSelectColor{
+        span{
+          height: 12px;
+          width: 12px;
+        }
       }
       .btnGroup {
         display: flex;
@@ -99,7 +108,7 @@
   }
 }
 .bottom {
-  padding: 2em 0;
+  padding: 1em 0 3em 0;
 
   .tabPane {
     &:hover > div {
@@ -113,6 +122,53 @@
       padding: 2em 0;
       letter-spacing: var(--letter-spacing-1);
       font-size: 1.1em;
+    }
+    .detailed{
+      padding: 2em 0;
+      .badgeWrap{
+        > span{
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 5px;
+        }
+        .badge{
+          >span{
+            height: 12px;
+            width: 12px;
+          }
+        }
+      }
+      .materialWrap{
+        display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-start;
+          flex-direction: row;
+          gap: 5px;
+      }
+      .sizesWrap{
+        display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-start;
+          flex-direction: row;
+          gap: 5px;
+      }
+      .tagsWrap{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 5px;
+        .tagsShowBtn{
+          cursor: pointer;
+          background-color: transparent;
+          border: none;
+        }
+      }
     }
   }
 }

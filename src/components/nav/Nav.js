@@ -64,107 +64,109 @@ const Nav = () => {
   );
   return (
     <nav className={`${Style.Nav} ${scroll && Style.Top}`}>
-      {!mobile ? (
-        <>
-          <div className={Style.menuLeftGroup}>
-            <Link passHref href="/">
-              <div>
-                {" "}
-                Home <HomeOutlinedIcon />
-              </div>
-            </Link>
-            <Link passHref href="#">
-              <div>
-                {" "}
-                Products <ShoppingCartOutlinedIcon />
-              </div>
-            </Link>
-
-            <Link passHref href="#">
-              <Dropdown
-                className="navbarCategories"
-                overlay={categoriesOverlay}
-              >
+      <div className="container">
+        {!mobile ? (
+          <>
+            <div className={Style.menuLeftGroup}>
+              <Link passHref href="/">
                 <div>
-                  Categories <CategoryOutlinedIcon />
+                  {" "}
+                  Home <HomeOutlinedIcon />
                 </div>
-              </Dropdown>
-            </Link>
+              </Link>
+              <Link passHref href="#">
+                <div>
+                  {" "}
+                  Products <ShoppingCartOutlinedIcon />
+                </div>
+              </Link>
 
-            {/* <Link href="#">
-              <div>
-                {" "}
-                About <HelpOutlineOutlinedIcon />
-              </div>
-            </Link>
-            <Link href="#">
-              <div>
-                {" "}
-                Contact <PhoneEnabledOutlinedIcon />
-              </div>
-            </Link> */}
-          </div>
-          <div className={Style.menuCenterGroup}>
-            <Link passHref={true} href="/">
-              <a className={Style.logoWrap}>
-                {" "}
-                <Image
-                  className={Style.navLogo}
-                  alt="baku cosy shop logo"
-                  src={logo}
-                />
-              </a>
-            </Link>
-          </div>
-          <div className={Style.menuRightGroup}>
-            <Link passHref href="/login">
-              <div>
-                {" "}
-                Sign in <AccountCircleOutlinedIcon />
-              </div>
-            </Link>
+              <Link passHref href="#">
+                <Dropdown
+                  className="navbarCategories"
+                  overlay={categoriesOverlay}
+                >
+                  <div>
+                    Categories <CategoryOutlinedIcon />
+                  </div>
+                </Dropdown>
+              </Link>
 
-            <Link passHref href="/Cart">
-              <div>
-                {" "}
-                Cart <AddShoppingCartOutlinedIcon />
-              </div>
-            </Link>
-          </div>
-        </>
-      ) : (
-        <>
-          <MenuIcon
-            onClick={() => setMobileModal(true)}
-            className={Style.MenuHamburgerIcon}
-          />
-          <Modal
-            className={Style.mobileMenuModal}
-            visible={mobileModal}
-            footer={null}
-            onCancel={() => setMobileModal(false)}
-          >
-            {menuOnMobile}
-          </Modal>
-          <div className={Style.menuCenterGroup}>
-            <Link passHref={true} href="#">
-              <a>
-                {" "}
-                <Image
-                  className={Style.navLogo}
-                  alt="baku cosy shop logo"
-                  src={logo}
-                />
-              </a>
-            </Link>
-          </div>
-          <div className={Style.menuRightGroup}>
-            <Link href="/login">Sign in</Link>
+              {/* <Link href="#">
+                <div>
+                  {" "}
+                  About <HelpOutlineOutlinedIcon />
+                </div>
+              </Link>
+              <Link href="#">
+                <div>
+                  {" "}
+                  Contact <PhoneEnabledOutlinedIcon />
+                </div>
+              </Link> */}
+            </div>
+            <div className={Style.menuCenterGroup}>
+              <Link passHref={true} href="/">
+                <a className={Style.logoWrap}>
+                  {" "}
+                  <Image
+                    className={Style.navLogo}
+                    alt="baku cosy shop logo"
+                    src={logo}
+                  />
+                </a>
+              </Link>
+            </div>
+            <div className={Style.menuRightGroup}>
+              <Link passHref href="/login">
+                <div>
+                  {" "}
+                  Sign in <AccountCircleOutlinedIcon />
+                </div>
+              </Link>
 
-            <Link href="/Cart">Cart</Link>
-          </div>
-        </>
-      )}
+              <Link passHref href="/Cart">
+                <div>
+                  {" "}
+                  Cart <AddShoppingCartOutlinedIcon />
+                </div>
+              </Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <MenuIcon
+              onClick={() => setMobileModal(true)}
+              className={Style.MenuHamburgerIcon}
+            />
+            <Modal
+              className={Style.mobileMenuModal}
+              visible={mobileModal}
+              footer={null}
+              onCancel={() => setMobileModal(false)}
+            >
+              {menuOnMobile}
+            </Modal>
+            <div className={Style.menuCenterGroup}>
+              <Link passHref={true} href="#">
+                <a>
+                  {" "}
+                  <Image
+                    className={Style.navLogo}
+                    alt="baku cosy shop logo"
+                    src={logo}
+                  />
+                </a>
+              </Link>
+            </div>
+            <div className={Style.menuRightGroup}>
+              <Link href="/login">Sign in</Link>
+
+              <Link href="/Cart">Cart</Link>
+            </div>
+          </>
+        )}
+      </div>
     </nav>
   );
 };
