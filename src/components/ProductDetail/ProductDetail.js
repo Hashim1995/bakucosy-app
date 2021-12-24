@@ -1,14 +1,22 @@
 import React from "react";
 import { bool, func } from "prop-types";
 import Style from "./ProductDetail.module.scss";
-import { Row, Col } from "antd";
 import { useState } from "react";
-import { Rate } from "antd";
+import { Row, Col, Rate, Tabs } from "antd";
 import ImageGallery from "react-image-gallery";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 const ProductDetail = ({ data }) => {
-  const { title, imgList, price, about, stockCount, rate } = data;
+  const {
+    title,
+    imgList,
+    price,
+    about,
+    stockCount,
+    rate,
+    description = about.description,
+  } = data;
+  const { TabPane } = Tabs;
   const [qualityVal, setQualityVal] = useState(1);
   const images = imgList.map((item) => ({
     original: item.src,
@@ -58,60 +66,81 @@ const ProductDetail = ({ data }) => {
   };
 
   return (
-    <section className={Style.main}>
-      <div className="container">
-        <Row>
-          <Col className={Style.left} xl={8}>
-            <div className={Style.leftTop}>
-              <h1>{title}</h1>
-              <h3>{price} $</h3>
-            </div>
-            <div className={Style.leftBottom}>
-              <p>{about.description}</p>
-              <Rate disabled className={Style.rate} value={rate} />
-              <div className={Style.btnGroup}>
-                <button
-                  onClick={() =>
-                    qualityVal > 1 ? setQualityVal(qualityVal - 1) : null
-                  }
-                >
-                  -
-                </button>
-                <div>{qualityVal}</div>
-                <button
-                  onClick={() =>
-                    qualityVal < stockCount
-                      ? setQualityVal(qualityVal + 1)
-                      : null
-                  }
-                >
-                  +
+    <>
+      <section className={Style.main}>
+        <div className="container">
+          <Row>
+            <Col className={Style.left} xl={8}>
+              <div className={Style.leftTop}>
+                <h1>{title}</h1>
+                <h3>{price} $</h3>
+              </div>
+              <div className={Style.leftBottom}>
+                <p>{about.description}</p>
+                <Rate disabled className={Style.rate} value={rate} />
+                <div className={Style.btnGroup}>
+                  <button
+                    onClick={() =>
+                      qualityVal > 1 ? setQualityVal(qualityVal - 1) : null
+                    }
+                  >
+                    -
+                  </button>
+                  <div>{qualityVal}</div>
+                  <button
+                    onClick={() =>
+                      qualityVal < stockCount
+                        ? setQualityVal(qualityVal + 1)
+                        : null
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+                <button className={`${Style.addBtn} black-button`}>
+                  add to cart
                 </button>
               </div>
-              <button className={`${Style.addBtn} black-button`}>
-                add to cart
-              </button>
-            </div>
-          </Col>
-          <Col className={Style.right} xl={16}>
-            <ImageGallery
-              renderLeftNav={(onClick, disabled) => (
-                <LeftNav onClick={onClick} disabled={disabled} />
-              )}
-              renderRightNav={(onClick, disabled) => (
-                <RightNav onClick={onClick} disabled={disabled} />
-              )}
-              infinite={true}
-              thumbnailPosition="right"
-              items={images}
-              showPlayButton={false}
-              slideDuration={150}
-              additionalClass={Style.orginal}
-            />
-          </Col>
-        </Row>
+            </Col>
+            <Col className={Style.right} xl={16}>
+              <ImageGallery
+                renderLeftNav={(onClick, disabled) => (
+                  <LeftNav onClick={onClick} disabled={disabled} />
+                )}
+                renderRightNav={(onClick, disabled) => (
+                  <RightNav onClick={onClick} disabled={disabled} />
+                )}
+                infinite={true}
+                thumbnailPosition="right"
+                items={images}
+                showPlayButton={false}
+                slideDuration={150}
+                additionalClass={Style.orginal}
+              />
+            </Col>
+          </Row>
+        </div>
+      </section>
+      <div className="container">
+        <section className={Style.bottom}>
+          <Tabs
+            tabBarStyle={{ color: "var(--dark-grey)" }}
+            defaultActiveKey="1"
+          >
+            <TabPane className={Style.tabPane} tab="Dewscription" key="1">
+              <p className={Style.description}>{description}</p>
+            </TabPane>
+            <TabPane
+              className={Style.tabPane}
+              tab="Additional information"
+              key="2"
+            >
+              <span className={Style.info}>{title}</span>
+            </TabPane>
+          </Tabs>
+        </section>
       </div>
-    </section>
+    </>
   );
 };
 
