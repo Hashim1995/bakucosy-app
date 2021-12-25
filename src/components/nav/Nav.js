@@ -18,13 +18,25 @@ const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
   const [mobileModal, setMobileModal] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const [hooverCatgegory, setHooverCatgegory] = useState(false);
 
   const handleScroll = (e) => {
-    e.target.scrollTop > 300
-      ? setScroll(true)
-      : e.target.scrollTop < 50
-      ? setScroll(false)
-      : null;
+    if (e.target.scrollTop > 300) {
+      setScroll(true);
+      if (hooverCatgegory) {
+        document
+          .getElementsByClassName("ant-dropdown-placement-bottomLeft")[0]
+          .parentNode.classList.add("categorySticky");
+      }
+    }
+    if (e.target.scrollTop < 50) {
+      setScroll(false);
+      if (hooverCatgegory) {
+        document
+          .getElementsByClassName("ant-dropdown-placement-bottomLeft")[0]
+          .parentNode.classList.remove("categorySticky");
+      }
+    }
   };
   useEffect(() => {
     document.body.addEventListener("scroll", handleScroll);
@@ -50,6 +62,7 @@ const Nav = () => {
       </Link>
     </div>
   );
+
   const categoriesOverlay = (
     <div className={Style.categoriesOverlay}>
       {categories.map((category, i) => (
@@ -62,6 +75,7 @@ const Nav = () => {
       ))}
     </div>
   );
+
   return (
     <nav className={`${Style.Nav} ${scroll && Style.Top}`}>
       <div className="container">
@@ -83,7 +97,9 @@ const Nav = () => {
 
               <Link passHref href="#">
                 <Dropdown
+                  onVisibleChange={() => setHooverCatgegory(true)}
                   className="navbarCategories"
+                  overlayClassName="zzzzz"
                   overlay={categoriesOverlay}
                 >
                   <div>

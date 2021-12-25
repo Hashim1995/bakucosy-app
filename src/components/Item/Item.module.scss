@@ -52,10 +52,10 @@
       align-items: center;
       a {
         color: var(--dark-grey);
-        font-size: 1.1em;
+        font-size: 1em;
         text-overflow: ellipsis;
         overflow: hidden;
-        width: 198px;
+        width: 215px;
         white-space: nowrap;
         margin: 0.5em 0 !important;
         &:hover{
@@ -64,7 +64,7 @@
       }
       p {
         color: var(--black);
-        font-size: 1.2em;
+        font-size: 1em;
         margin: 0.5em 0 !important;
         letter-spacing: var(--letter-spacing-1);
       }

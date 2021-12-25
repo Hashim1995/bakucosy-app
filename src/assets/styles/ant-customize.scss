@@ -17,3 +17,8 @@
     padding: 1em !important;
     width: 100% !important;
 }
+.categorySticky{
+    .ant-dropdown-placement-bottomLeft{
+        top: 70px !important;
+    }
+}

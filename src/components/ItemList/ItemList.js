@@ -23,32 +23,11 @@ const ItemList = () => {
         {}
         {productAllList &&
           productAllList.map((item, index) => (
-            <Col key={index} span={6}>
+            <Col key={index} md={8} sm={12} xs={24} xl={6}>
               <Item data={item} />
             </Col>
           ))}
       </Row>
-      {/* <Row gutter={24}>
-        {productList[0].decoration.map((item, index) => (
-          <Col key={index} span={6}>
-            <Item data={item} />
-          </Col>
-        ))}
-      </Row>
-      <Row gutter={24}>
-        {productList[0].essentials.map((item, index) => (
-          <Col key={index} span={6}>
-            <Item data={item} />
-          </Col>
-        ))}
-      </Row>
-      <Row gutter={24}>
-        {productList[0].interior.map((item, index) => (
-          <Col key={index} span={6}>
-            <Item data={item} />
-          </Col>
-        ))}
-      </Row> */}
     </div>
   );
 };

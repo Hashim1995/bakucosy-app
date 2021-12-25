@@ -91,7 +91,11 @@ const ProductDetail = ({ data }) => {
                 <h3>{price} $</h3>
               </div>
               <div className={Style.leftBottom}>
-                <p>{about.description}</p>
+                <p>
+                  {about.description.length > 250
+                    ? about.description.substring(0, 250) + "..."
+                    : about.description}{" "}
+                </p>
                 <Rate disabled className={Style.rate} value={rate} />
                 <br />
                 <label className={Style.labelColor}>Color:</label>

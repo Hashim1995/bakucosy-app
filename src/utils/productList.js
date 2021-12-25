@@ -114,7 +114,7 @@ const productList = {
           "eco",
         ],
         description:
-          "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
+          "Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and materialDesigned Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material for simplicity and made from high quality materials. Its sleek geometry and material simplicity and made from high quality materials. Its sleek geometry and material   combinations creates a modern personalized look.",
       },
       imgList: [bag_1_a, bag_1_b],
       isStock: true,
