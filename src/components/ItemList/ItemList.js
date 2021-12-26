@@ -35,7 +35,7 @@ const ItemList = () => {
   ];
   useEffect(() => {
     const getFullProductList = (arr) => {
-      let arrayList = [];
+      const arrayList = [];
       for (let value of Object.values(arr)) {
         arrayList.push(value);
       }
@@ -48,24 +48,28 @@ const ItemList = () => {
   useEffect(() => {
     if (productAllList !== null) {
       if (sortValue === 1) {
-        productAllList.sort((a, b) =>
-          a.popularity < b.popularity ? 1 : b.popularity < a.popularity ? -1 : 0
-        );
+        let sorted = productAllList.sort((a, b) => {
+          return b.popularity - a.popularity;
+        });
+        setProductAllList(sorted);
       }
       if (sortValue === 2) {
-        productAllList.sort((a, b) => {
-          a.title < b.title ? 1 : b.title < a.title ? -1 : 0;
+        let sorted = productAllList.sort((a, b) => {
+          return a.popularity - b.popularity;
         });
+        setProductAllList(sorted);
       }
       if (sortValue === 3) {
-        productAllList.sort((a, b) => {
-          return a.price - b.price;
-        });
-      }
-      if (sortValue === 4) {
-        productAllList.sort((a, b) => {
+        let sorted = productAllList.sort((a, b) => {
           return b.price - a.price;
         });
+        setProductAllList(sorted);
+      }
+      if (sortValue === 4) {
+        let sorted = productAllList.sort((a, b) => {
+          return a.price - b.price;
+        });
+        setProductAllList(sorted);
       }
     }
   }, [sortValue]);
@@ -74,6 +78,7 @@ const ItemList = () => {
     <div className="container">
       <div className={Style.topWrap}>
         <div className={Style.top}>
+          {console.log("rendered")}
           <p
             onClick={() => {
               setFilterVisibile((value) => !value);
