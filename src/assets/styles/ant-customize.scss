@@ -22,3 +22,8 @@
         top: 70px !important;
     }
 }
+
+.slick-active .textWrap{
+    transform: scale(1) translateX(0);
+    transition: transform 2s ease-in-out;
+}

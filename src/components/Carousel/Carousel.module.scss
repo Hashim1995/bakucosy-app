@@ -4,6 +4,9 @@
     object-fit: cover;
 }
 .textWrap{
+   transform: scale(0) translateX(100vw);
+   transition: transform 1s ease-in-out;
+
     position: absolute;
     left: 20%;
     top: 35%;

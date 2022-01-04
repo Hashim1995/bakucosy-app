@@ -12,21 +12,22 @@ const Item = ({ data }) => {
   const uuid = uuidv4();
   return (
     <div className={`${Style.wrap}`}>
-      <div className={Style.top}>
-        <Image
-          alt="a"
-          className={Style.img1}
-          src={imgList[0].src}
-          layout="fill"
-        />
-        <Image
-          alt="a"
-          className={Style.img2}
-          src={imgList[1].src}
-          layout="fill"
-        />
-      </div>
-
+      <Link title={title} href={`/product/${[id]}`}>
+        <div className={Style.top}>
+          <Image
+            alt="a"
+            className={Style.img1}
+            src={imgList[0].src}
+            layout="fill"
+          />
+          <Image
+            alt="a"
+            className={Style.img2}
+            src={imgList[1].src}
+            layout="fill"
+          />
+        </div>
+      </Link>
       <div className={Style.bottom}>
         <div className={Style.info}>
           <Link title={title} href={`/product/${[id]}`}>
@@ -38,6 +39,7 @@ const Item = ({ data }) => {
           <button onClick={() => setIsModalVisible(true)}>add to cart</button>
         </div>
       </div>
+
       <Modal
         className={`${Style.modal} itemModal`}
         title={title}

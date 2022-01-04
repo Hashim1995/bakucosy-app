@@ -1,5 +1,6 @@
 import Style from "./Carousel.module.scss";
 import { Carousel as CarouselAnt } from "antd";
+import { useState } from "react";
 import carouselImages from "../../utils/carouselImages";
 import { useSelector } from "react-redux";
 const Carousel = () => {
@@ -25,8 +26,6 @@ const Carousel = () => {
         effect="fade"
         dots={false}
         autoplay={true}
-        swipeToSlide
-        draggable
         arrows={!mobile}
         {...settings}
       >
@@ -35,7 +34,7 @@ const Carousel = () => {
             <div key={index}>
               <img className={Style.CarouselImg} src={item.img.src} alt="" />
               <div className="container">
-                <div className={Style.textWrap}>
+                <div className={`${Style.textWrap} textWrap`}>
                   <h3 className={Style.title}>{item.title}</h3>
                   <h5 className={Style.category}>{item.category}</h5>
                 </div>

@@ -9,11 +9,13 @@
       transition: var(--transition4);
       margin-right: 1em;
       margin-bottom: 0;
+      display: flex;
       cursor: pointer;
       &:hover {
         transition: var(--transition4);
         color: var(--orange);
       }
+      
     }
     div {
       display: flex;
