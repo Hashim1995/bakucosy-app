@@ -14,10 +14,12 @@ import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutl
 import MenuIcon from "@mui/icons-material/Menu";
 import categories from "../../utils/categories";
 import { useSelector } from "react-redux";
+import Log from "../Log/Log";
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
   const [mobileModal, setMobileModal] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const [logModal, setLogModal] = useState(false);
   const [hooverCatgegory, setHooverCatgegory] = useState(false);
 
   const handleScroll = (e) => {
@@ -134,12 +136,10 @@ const Nav = () => {
               </Link>
             </div>
             <div className={Style.menuRightGroup}>
-              <Link passHref href="/login">
-                <div>
-                  {" "}
-                  Sign in <AccountCircleOutlinedIcon />
-                </div>
-              </Link>
+              <div onClick={() => setLogModal(true)}>
+                {" "}
+                Sign in <AccountCircleOutlinedIcon />
+              </div>
 
               <Link passHref href="/Cart">
                 <div>
@@ -183,6 +183,15 @@ const Nav = () => {
           </>
         )}
       </div>
+      <Modal
+        width={"40vw"}
+        title="Sign in/up"
+        visible={logModal}
+        footer={null}
+        onCancel={() => setLogModal(false)}
+      >
+        <Log />
+      </Modal>
     </nav>
   );
 };

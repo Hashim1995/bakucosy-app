@@ -93,7 +93,6 @@ const ItemList = () => {
     <div className="container">
       <div className={Style.topWrap}>
         <div className={Style.top}>
-          {console.log("rendered")}
           <p
             onClick={() => {
               setFilterVisibile((value) => !value);

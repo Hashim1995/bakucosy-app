@@ -9,6 +9,10 @@
     display: flex;
 }
 
+.ant-modal{
+    z-index: 999999 !important;
+}
+
 .ant-dropdown-placement-bottomLeft{
     left: 0px !important;
     right: 0 !important;

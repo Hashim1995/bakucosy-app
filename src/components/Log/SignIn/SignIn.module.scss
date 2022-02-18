@@ -1,0 +1,19 @@
+.input{
+    box-shadow: none;
+    border-color: var(--light-grey) !important;
+    &:focus, &:hover, &:active{
+     box-shadow: none !important;
+     border-color: var(--black) !important;
+    }
+ }
+ .leftToRight{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 2em;
+ }
+ .forgot{
+     &:hover{
+         color: var(--grey);
+     }
+ }
