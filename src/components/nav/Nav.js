@@ -69,10 +69,12 @@ const Nav = () => {
     <div className={Style.categoriesOverlay}>
       {categories.map((category, i) => (
         <Link passHref key={i} href="/">
-          <div className={Style.categoriesOverlayItems}>
-            <img src={category.img.src} alt="" />
-            <h4>{category.title}</h4>
-          </div>
+          <a>
+            <div className={Style.categoriesOverlayItems}>
+              <img src={category.img.src} alt="" />
+              <h4>{category.title}</h4>
+            </div>
+          </a>
         </Link>
       ))}
     </div>
@@ -85,29 +87,35 @@ const Nav = () => {
           <>
             <div className={Style.menuLeftGroup}>
               <Link passHref href="/">
-                <div>
-                  {" "}
-                  Home <HomeOutlinedIcon />
-                </div>
+                <a>
+                  <div>
+                    {" "}
+                    Home <HomeOutlinedIcon />
+                  </div>
+                </a>
               </Link>
               <Link passHref href="#">
-                <div>
-                  {" "}
-                  Products <ShoppingCartOutlinedIcon />
-                </div>
+                <a>
+                  <div>
+                    {" "}
+                    Products <ShoppingCartOutlinedIcon />
+                  </div>
+                </a>
               </Link>
 
               <Link passHref href="#">
-                <Dropdown
-                  onVisibleChange={() => setHooverCatgegory(true)}
-                  className="navbarCategories"
-                  overlayClassName="zzzzz"
-                  overlay={categoriesOverlay}
-                >
-                  <div>
-                    Categories <CategoryOutlinedIcon />
-                  </div>
-                </Dropdown>
+                <a>
+                  <Dropdown
+                    onVisibleChange={() => setHooverCatgegory(true)}
+                    className="navbarCategories"
+                    overlayClassName="zzzzz"
+                    overlay={categoriesOverlay}
+                  >
+                    <div>
+                      Categories <CategoryOutlinedIcon />
+                    </div>
+                  </Dropdown>
+                </a>
               </Link>
 
               {/* <Link href="#">
@@ -141,12 +149,10 @@ const Nav = () => {
                 Sign in <AccountCircleOutlinedIcon />
               </div>
 
-              <Link passHref href="/Cart">
-                <div>
-                  {" "}
-                  Cart <AddShoppingCartOutlinedIcon />
-                </div>
-              </Link>
+              <div>
+                {" "}
+                Cart <AddShoppingCartOutlinedIcon />
+              </div>
             </div>
           </>
         ) : (
