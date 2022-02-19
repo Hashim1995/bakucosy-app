@@ -13,7 +13,8 @@ a {
 }
 * {
   box-sizing: border-box;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'lato', cursive;
+  font-display: swap;
 }
 *::selection {
   background-color: var(--gold);

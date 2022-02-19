@@ -2,22 +2,25 @@
 import React, { useState, useEffect } from "react";
 import Style from "./Register.module.scss";
 import { Form, Input, Select, Modal, Checkbox, Button } from "antd";
-import {
-  UserOutlined,
-  LockOutlined,
-  SafetyOutlined,
-  MailOutlined,
-} from "@ant-design/icons";
+import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
+import { useRouter } from "next/router";
 const Register = () => {
   const { Option } = Select;
   const [agreementModal, setAgreementModal] = useState(false);
   const [form] = Form.useForm();
+  const router = useRouter();
+  const addToLocalStorageArray = function (name, value) {
+    let items = JSON.parse(localStorage.getItem(name)) || [];
+    items.push(value);
+    localStorage.setItem(name, JSON.stringify(items));
+  };
 
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    addToLocalStorageArray("users_DB", values);
+    router.reload();
   };
 
   return (
