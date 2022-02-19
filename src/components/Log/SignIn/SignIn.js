@@ -3,16 +3,29 @@ import Style from "./SignIn.module.scss";
 import { Form, Input, Divider, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 const SignIn = () => {
+  const [form] = Form.useForm();
+  const onFinish = (values) => {
+    console.log("Received values of form: ", values);
+  };
+
   return (
-    <Form layout="vertical">
-      <Form.Item label="Username or email address">
+    <Form form={form} name="signin" onChange={onFinish} layout="vertical">
+      <Form.Item
+        label="Email address"
+        name="name"
+        rules={[{ required: true, message: "Please input your Email!" }]}
+      >
         <Input
           placeholder="Your username or email address"
           className={Style.input}
           prefix={<UserOutlined />}
         />
       </Form.Item>
-      <Form.Item label="Password">
+      <Form.Item
+        name="name"
+        rules={[{ required: true, message: "Please input your Password!" }]}
+        label="Password"
+      >
         <Input.Password
           className={Style.input}
           prefix={<LockOutlined />}

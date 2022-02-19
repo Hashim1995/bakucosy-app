@@ -29,7 +29,7 @@ const Register = () => {
       layout="vertical"
       form={form}
       name="register"
-      onFinish={onFinish}
+      onChange={onFinish}
       initialValues={{
         prefix: "86",
       }}
