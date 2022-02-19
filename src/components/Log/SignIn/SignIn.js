@@ -1,19 +1,34 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Style from "./SignIn.module.scss";
-import { Form, Input, Divider, Checkbox } from "antd";
+import { Button, Form, Input, Divider, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 const SignIn = () => {
   const [form] = Form.useForm();
+  const [, forceUpdate] = useState({});
+
+  useEffect(() => {
+    forceUpdate({});
+  }, []);
+
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    console.log("Finish:", values);
   };
 
   return (
-    <Form form={form} name="signin" onChange={onFinish} layout="vertical">
+    <Form form={form} name="signin" onFinish={onFinish} layout="vertical">
       <Form.Item
-        label="Email address"
-        name="name"
-        rules={[{ required: true, message: "Please input your Email!" }]}
+        label="E-mail"
+        name="username"
+        rules={[
+          {
+            type: "email",
+            message: "The input is not valid E-mail!",
+          },
+          {
+            required: true,
+            message: "Please input your E-mail!",
+          },
+        ]}
       >
         <Input
           placeholder="Your username or email address"
@@ -21,9 +36,15 @@ const SignIn = () => {
           prefix={<UserOutlined />}
         />
       </Form.Item>
+
       <Form.Item
-        name="name"
-        rules={[{ required: true, message: "Please input your Password!" }]}
+        name="password"
+        rules={[
+          {
+            required: true,
+            message: "Please input your password!",
+          },
+        ]}
         label="Password"
       >
         <Input.Password
@@ -40,13 +61,22 @@ const SignIn = () => {
           Forgot password
         </a>
       </div>
-      <Form.Item>
-        <button
-          style={{ fontSize: "1em", width: "100%" }}
-          className="black-button"
-        >
-          Sign in
-        </button>
+      <Form.Item shouldUpdate>
+        {() => (
+          <Button
+            style={{ fontSize: "1em", width: "100%" }}
+            className="black-button"
+            type="primary"
+            htmlType="submit"
+            disabled={
+              !form.isFieldsTouched(true) ||
+              !!form.getFieldsError().filter(({ errors }) => errors.length)
+                .length
+            }
+          >
+            Log in
+          </Button>
+        )}
       </Form.Item>
     </Form>
   );

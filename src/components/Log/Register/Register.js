@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Style from "./Register.module.scss";
 import { Form, Input, Select, Row, Col, Checkbox, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 const Register = () => {
@@ -41,6 +42,7 @@ const Register = () => {
         rules={[{ required: true, message: "Please input your Name!" }]}
       >
         <Input
+          className={Style.input}
           prefix={<UserOutlined className="site-form-item-icon" />}
           placeholder="Username"
         />
@@ -51,6 +53,7 @@ const Register = () => {
         rules={[{ required: true, message: "Please input your Surname!" }]}
       >
         <Input
+          className={Style.input}
           prefix={<UserOutlined className="site-form-item-icon" />}
           placeholder="Username"
         />
@@ -70,7 +73,7 @@ const Register = () => {
           },
         ]}
       >
-        <Input />
+        <Input className={Style.input} />
       </Form.Item>
 
       <Form.Item
@@ -84,7 +87,7 @@ const Register = () => {
         ]}
         hasFeedback
       >
-        <Input.Password />
+        <Input.Password className={Style.input} />
       </Form.Item>
 
       <Form.Item
@@ -110,7 +113,7 @@ const Register = () => {
           }),
         ]}
       >
-        <Input.Password />
+        <Input.Password className={Style.input} />
       </Form.Item>
 
       <Form.Item
@@ -124,10 +127,8 @@ const Register = () => {
         ]}
       >
         <Input
+          className={`${Style.input} ${Style.numberInput}`}
           addonBefore={prefixSelector}
-          style={{
-            width: "100%",
-          }}
         />
       </Form.Item>
 
@@ -141,7 +142,7 @@ const Register = () => {
           },
         ]}
       >
-        <Select placeholder="select your gender">
+        <Select className={Style.input} placeholder="select your gender">
           <Option value="male">Male</Option>
           <Option value="female">Female</Option>
           <Option value="other">Other</Option>
@@ -164,7 +165,7 @@ const Register = () => {
                 },
               ]}
             >
-              <Input />
+              <Input className={Style.input} />
             </Form.Item>
           </Col>
           <Col span={12}>
@@ -185,7 +186,7 @@ const Register = () => {
           },
         ]}
       >
-        <Checkbox>
+        <Checkbox className={Style.input}>
           I have read the <a href="">agreement</a>
         </Checkbox>
       </Form.Item>
