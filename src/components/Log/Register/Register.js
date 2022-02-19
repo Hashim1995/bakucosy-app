@@ -12,6 +12,8 @@ const Register = () => {
   const [agreementModal, setAgreementModal] = useState(false);
   const [form] = Form.useForm();
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
   const addToLocalStorageArray = function (name, value) {
     let items = JSON.parse(localStorage.getItem(name)) || [];
     items.push(value);
@@ -19,8 +21,11 @@ const Register = () => {
   };
 
   const onFinish = (values) => {
+    setLoading(true);
     addToLocalStorageArray("users_DB", values);
-    router.reload();
+    setTimeout(() => {
+      router.reload();
+    }, 1500);
   };
 
   return (
@@ -221,6 +226,7 @@ const Register = () => {
         <Form.Item shouldUpdate>
           {() => (
             <Button
+              loading={loading}
               style={{ fontSize: "1em", width: "100%" }}
               className="black-button"
               type="primary"
