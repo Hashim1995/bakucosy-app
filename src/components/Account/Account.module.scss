@@ -1,0 +1,56 @@
+.main {
+  padding: 3em 0;
+  background-color: var(--bg-grey);
+  min-height: 60vh;
+
+  .left {
+    background-color: var(--white);
+    padding: 1em;
+    border-radius: var(--radius12);
+    h3 {
+      color: var(--black);
+
+      text-align: center;
+    }
+    ul {
+      padding-left: 0;
+      list-style: none;
+      li {
+        &:hover a {
+          color: var(--orange);
+        }
+        &:hover svg {
+          color: var(--orange);
+          transition: var(--transition3);
+        }
+        font-size: 0.8em;
+        a {
+          text-transform: uppercase;
+          color: var(--dark-grey);
+          padding: 1.2em 0;
+
+          border-bottom: 1px solid var(--light-grey);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          svg {
+            color: var(--dark-grey);
+            transition: var(--transition3);
+          }
+        }
+      }
+      .active {
+        a {
+          color: var(--orange);
+          svg {
+            color: var(--orange);
+          }
+        }
+      }
+    }
+  }
+  .right{
+      padding: 1em;
+  }
+}

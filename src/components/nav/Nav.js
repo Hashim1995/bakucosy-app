@@ -29,39 +29,6 @@ const Nav = () => {
   const loggedUser = useSelector((state) => state.loggedUser.value);
   console.log(loggedUser);
 
-  const userMenuDropdown = (
-    <div className={Style.userMenuDropdown}>
-      <ul>
-        <li className={Style.userMenuItem}>
-          <Link passHref href="/">
-            <a className={Style.userMenuDropdownA}>
-              {" "}
-              Account <AccountCircleOutlinedIcon />
-            </a>
-          </Link>
-        </li>
-        <Divider />
-        <li className={Style.userMenuItem}>
-          <Link passHref href="/">
-            <a className={Style.userMenuDropdownA}>
-              {" "}
-              Cart <AddShoppingCartOutlinedIcon />
-            </a>
-          </Link>
-        </li>{" "}
-        <Divider />
-        <li
-          onClick={() => {
-            localStorage.removeItem("currentUser");
-            router.reload();
-          }}
-          className={Style.userMenuDropdownA}
-        >
-          Log out <LogoutIcon />
-        </li>
-      </ul>
-    </div>
-  );
   const handleScroll = (e) => {
     if (e.target.scrollTop > 300) {
       setScroll(true);
@@ -117,6 +84,40 @@ const Nav = () => {
           </a>
         </Link>
       ))}
+    </div>
+  );
+
+  const userMenuDropdown = (
+    <div className={Style.userMenuDropdown}>
+      <ul>
+        <li className={Style.userMenuItem}>
+          <Link passHref href="/account/my-account">
+            <a className={Style.userMenuDropdownA}>
+              {" "}
+              Account <AccountCircleOutlinedIcon />
+            </a>
+          </Link>
+        </li>
+        <Divider />
+        <li className={Style.userMenuItem}>
+          <Link passHref href="/">
+            <a className={Style.userMenuDropdownA}>
+              {" "}
+              Cart <AddShoppingCartOutlinedIcon />
+            </a>
+          </Link>
+        </li>{" "}
+        <Divider />
+        <li
+          onClick={() => {
+            localStorage.removeItem("currentUser");
+            router.reload();
+          }}
+          className={Style.userMenuDropdownA}
+        >
+          Log out <LogoutIcon />
+        </li>
+      </ul>
     </div>
   );
 
