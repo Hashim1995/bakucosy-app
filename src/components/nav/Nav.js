@@ -12,6 +12,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
 import categories from "../../utils/categories";
@@ -189,7 +190,9 @@ const Nav = () => {
                   placement="bottomCenter"
                   trigger={["click"]}
                 >
-                  <div>{loggedUser.user.email}</div>
+                  <div>
+                    {loggedUser.user.email} <PersonOutlineIcon />
+                  </div>
                 </Dropdown>
               ) : (
                 <div onClick={() => setLogModal(true)}>
