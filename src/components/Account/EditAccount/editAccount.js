@@ -1,7 +1,7 @@
 import React from "react";
 
 const editAccount = () => {
-  return <div>editAccount component</div>;
+  return <div>Edit your profile</div>;
 };
 
 export default editAccount;

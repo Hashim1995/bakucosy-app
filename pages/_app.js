@@ -6,11 +6,13 @@ import "../src/assets/styles/ant-customize.scss";
 import "react-image-gallery/styles/css/image-gallery.css";
 import store from "../redux/store";
 import { Provider } from "react-redux";
-
+import Layout from "../src/components/Layout";
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }

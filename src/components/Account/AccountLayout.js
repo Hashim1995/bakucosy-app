@@ -2,7 +2,7 @@ import React from "react";
 import Style from "./Account.module.scss";
 import Link from "next/link";
 import { Row, Col } from "antd";
-import MyAccount from "./myAccount/myAccount";
+import MyAccount from "./MyAccount/MyAccount";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -10,7 +10,8 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import HistoryIcon from "@mui/icons-material/History";
 import LogoutIcon from "@mui/icons-material/Logout";
-const Account = () => {
+import AccountSubLayout from "./AccountSubLayout";
+const AccountLayout = ({ children }) => {
   return (
     <section className={Style.main}>
       <div className="container">
@@ -20,7 +21,7 @@ const Account = () => {
               <h3>Hashim Hashimli</h3>
               <ul>
                 <li className={Style.active}>
-                  <Link passHref href="/">
+                  <Link passHref href="/account/myaccount">
                     <a>
                       {" "}
                       My Account <PersonOutlineIcon />
@@ -29,7 +30,7 @@ const Account = () => {
                 </li>
                 <li>
                   {" "}
-                  <Link passHref href="/account/edit-account">
+                  <Link passHref href="/account/edit">
                     <a>
                       {" "}
                       Edit Account <ManageAccountsOutlinedIcon />
@@ -86,7 +87,8 @@ const Account = () => {
           </Col>
           <Col lg={18}>
             <div className={Style.right}>
-              <MyAccount />
+              {children}
+              <AccountSubLayout />
             </div>
           </Col>
         </Row>
@@ -95,4 +97,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default AccountLayout;
