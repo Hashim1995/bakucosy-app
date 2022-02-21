@@ -5,23 +5,62 @@ import Dropdown from "antd/lib/dropdown";
 import Style from "./Nav.module.scss";
 import { useState } from "react";
 import Image from "next/image";
+import { Divider, Menu } from "antd";
 import logo from "../../assets/images/logo-black.png";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
 import categories from "../../utils/categories";
 import { useSelector } from "react-redux";
 import Log from "../Log/Log";
+import { useRouter } from "next/router";
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
   const [mobileModal, setMobileModal] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [logModal, setLogModal] = useState(false);
   const [hooverCatgegory, setHooverCatgegory] = useState(false);
+  const router = useRouter();
+  const loggedUser = useSelector((state) => state.loggedUser.value);
+  console.log(loggedUser);
 
+  const userMenuDropdown = (
+    <div className={Style.userMenuDropdown}>
+      <ul>
+        <li className={Style.userMenuItem}>
+          <Link passHref href="/">
+            <a className={Style.userMenuDropdownA}>
+              {" "}
+              Account <AccountCircleOutlinedIcon />
+            </a>
+          </Link>
+        </li>
+        <Divider />
+        <li className={Style.userMenuItem}>
+          <Link passHref href="/">
+            <a className={Style.userMenuDropdownA}>
+              {" "}
+              Cart <AddShoppingCartOutlinedIcon />
+            </a>
+          </Link>
+        </li>{" "}
+        <Divider />
+        <li
+          onClick={() => {
+            localStorage.removeItem("currentUser");
+            router.reload();
+          }}
+          className={Style.userMenuDropdownA}
+        >
+          Log out <LogoutIcon />
+        </li>
+      </ul>
+    </div>
+  );
   const handleScroll = (e) => {
     if (e.target.scrollTop > 300) {
       setScroll(true);
@@ -144,10 +183,20 @@ const Nav = () => {
               </Link>
             </div>
             <div className={Style.menuRightGroup}>
-              <div onClick={() => setLogModal(true)}>
-                {" "}
-                Sign in <AccountCircleOutlinedIcon />
-              </div>
+              {loggedUser && loggedUser.isLogged ? (
+                <Dropdown
+                  overlay={userMenuDropdown}
+                  placement="bottomCenter"
+                  trigger={["click"]}
+                >
+                  <div>{loggedUser.user.email}</div>
+                </Dropdown>
+              ) : (
+                <div onClick={() => setLogModal(true)}>
+                  {" "}
+                  Sign in <AccountCircleOutlinedIcon />
+                </div>
+              )}
 
               <div>
                 {" "}
@@ -157,6 +206,7 @@ const Nav = () => {
           </>
         ) : (
           <>
+            §
             <MenuIcon
               onClick={() => setMobileModal(true)}
               className={Style.MenuHamburgerIcon}

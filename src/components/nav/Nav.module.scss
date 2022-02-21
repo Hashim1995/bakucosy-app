@@ -91,6 +91,39 @@
     }
   }
 }
+.userMenuDropdown{
+  width: 200px;
+  background-color: var(--white);
+  padding:  .5em 1em;
+  border-radius: var(--radius6);
+  box-shadow:  rgba(0, 0, 0, 0.548) 1px 2px 6px;
+  ul{
+    padding-left: 0;
+    list-style: none;
+    div{
+      margin: 15px 0;
+    }
+    li{
+   
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+    .userMenuDropdownA{
+      &:hover{
+        color: var(--black);
+        cursor: pointer;
+      }
+    }
+  }
+
+}
 @media screen and (min-width: 1130px) and (max-width: 1400px) {
   .Nav {
     padding: 0 6vw;

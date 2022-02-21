@@ -22,7 +22,6 @@ const SignIn = () => {
   const login = (username, password) => {
     loggedUser.map((item) => {
       if (item.email === username && item.password === password) {
-        alert("pass");
         dispatch(set_LoggedUser({ isLogged: true, user: item }));
 
         localStorage.setItem(

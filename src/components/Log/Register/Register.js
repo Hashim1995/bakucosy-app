@@ -5,7 +5,9 @@ import { Form, Input, Select, Modal, Checkbox, Button } from "antd";
 import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { useSelector, useDispatch } from "react-redux";
 // import ReCAPTCHA from "react-google-recaptcha";
+import { set_LoggedUser } from "../../../../redux/loggedUser";
 import { useRouter } from "next/router";
 const Register = () => {
   const { Option } = Select;
@@ -14,10 +16,19 @@ const Register = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
+  const loggedUser = useSelector((state) => state.users_DB.value);
+  const dispatch = useDispatch();
   const addToLocalStorageArray = function (name, value) {
     let items = JSON.parse(localStorage.getItem(name)) || [];
     items.push(value);
     localStorage.setItem(name, JSON.stringify(items));
+
+    dispatch(set_LoggedUser({ isLogged: true, user: value }));
+
+    localStorage.setItem(
+      "currentUser",
+      JSON.stringify({ isLogged: true, user: value })
+    );
   };
 
   const onFinish = (values) => {
