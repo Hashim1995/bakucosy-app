@@ -1,0 +1,19 @@
+.card {
+    border-radius: var(--radius12);
+  > div {
+    padding: 1em;
+  }
+  >div:nth-child(2){
+      border-bottom-left-radius: var(--radius12);
+      border-bottom-right-radius: var(--radius12);
+  }
+  .bottom{
+      margin-top: 1em;
+      display: flex;
+      align-items: center;
+        svg{
+            margin-right: 1em;
+            cursor: pointer;
+        }
+  }
+}
