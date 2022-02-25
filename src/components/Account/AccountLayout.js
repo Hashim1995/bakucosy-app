@@ -1,8 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import Style from "./Account.module.scss";
 import Link from "next/link";
 import { Row, Col } from "antd";
-import MyAccount from "./MyAccount/MyAccount";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -10,8 +9,12 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import HistoryIcon from "@mui/icons-material/History";
 import LogoutIcon from "@mui/icons-material/Logout";
-import AccountSubLayout from "./AccountSubLayout";
+import { useRouter } from "next/router";
 const AccountLayout = ({ children }) => {
+  let URLPath = useRouter().asPath;
+  URLPath = URLPath.split("/");
+  const selectedAccountPage = URLPath[URLPath.length - 1];
+
   return (
     <section className={Style.main}>
       <div className="container">
@@ -20,53 +23,87 @@ const AccountLayout = ({ children }) => {
             <div className={Style.left}>
               <h3>Hashim Hashimli</h3>
               <ul>
-                <li className={Style.active}>
-                  <Link passHref href="/account/myaccount">
+                <li
+                  className={
+                    selectedAccountPage === "myaccount" && Style.active
+                  }
+                >
+                  <Link
+                    onClick={() => setSelectedAccountPage("myaccount")}
+                    passHref
+                    href="/account/myaccount"
+                  >
                     <a>
                       {" "}
                       My Account <PersonOutlineIcon />
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li className={selectedAccountPage === "edit" && Style.active}>
                   {" "}
-                  <Link passHref href="/account/edit">
+                  <Link
+                    onClick={() => setSelectedAccountPage("edit")}
+                    passHref
+                    href="/account/edit"
+                  >
                     <a>
                       {" "}
                       Edit Account <ManageAccountsOutlinedIcon />
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li
+                  className={selectedAccountPage === "shipping" && Style.active}
+                >
                   {" "}
-                  <Link passHref href="/">
+                  <Link
+                    onClick={() => setSelectedAccountPage("shipping")}
+                    passHref
+                    href="/account/shipping"
+                  >
                     <a>
                       {" "}
                       Shipping address <HomeOutlinedIcon />
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li
+                  className={selectedAccountPage === "payment" && Style.active}
+                >
                   {" "}
-                  <Link passHref href="/">
+                  <Link
+                    onClick={() => setSelectedAccountPage("payment")}
+                    passHref
+                    href="/account/payment"
+                  >
                     <a>
                       {" "}
                       Payment methods <CreditCardIcon />
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li className={selectedAccountPage === "order" && Style.active}>
                   {" "}
-                  <Link passHref href="/">
+                  <Link
+                    onClick={() => setSelectedAccountPage("order")}
+                    passHref
+                    href="/account/order"
+                  >
                     <a>
                       {" "}
                       Order tracking <MyLocationIcon />
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li
+                  className={selectedAccountPage === "history" && Style.active}
+                >
                   {" "}
-                  <Link passHref href="/">
+                  <Link
+                    onClick={() => setSelectedAccountPage("history")}
+                    passHref
+                    href="/account/history"
+                  >
                     <a>
                       {" "}
                       Order history <HistoryIcon />
@@ -86,10 +123,7 @@ const AccountLayout = ({ children }) => {
             </div>
           </Col>
           <Col lg={18}>
-            <div className={Style.right}>
-              {children}
-              <AccountSubLayout />
-            </div>
+            <div className={Style.right}>{children}</div>
           </Col>
         </Row>
       </div>
