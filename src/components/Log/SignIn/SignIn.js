@@ -4,7 +4,8 @@ import Style from "./SignIn.module.scss";
 import { Button, Form, Input, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
-import { set_LoggedUser } from "../../../../redux/loggedUser";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "../../../utils/authentication/firebase";
 const SignIn = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
@@ -12,40 +13,24 @@ const SignIn = () => {
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
+  const auth = getAuth();
 
   useEffect(() => {
     forceUpdate({});
   }, []);
 
-  const loggedUser = useSelector((state) => state.users_DB.value);
-
-  const login = (username, password) => {
-    loggedUser.map((item) => {
-      if (item.email === username && item.password === password) {
-        dispatch(set_LoggedUser({ isLogged: true, user: item }));
-
-        localStorage.setItem(
-          "currentUser",
-          JSON.stringify({ isLogged: true, user: item })
-        );
-      }
-    });
-  };
-
   const onFinish = (values) => {
-    setLoading(true);
-    setTimeout(() => {
-      login(values.username, values.password);
-      setLoading(false);
-      router.reload();
-    }, 1500);
+    // setLoading(true);
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      .then((success) => console.log(success))
+      .catch((err) => console.log(err));
   };
 
   return (
     <Form form={form} name="signin" onFinish={onFinish} layout="vertical">
       <Form.Item
         label="E-mail"
-        name="username"
+        name="email"
         rules={[
           {
             type: "email",

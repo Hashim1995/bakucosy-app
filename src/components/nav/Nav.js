@@ -26,8 +26,7 @@ const Nav = () => {
   const [logModal, setLogModal] = useState(false);
   const [hooverCatgegory, setHooverCatgegory] = useState(false);
   const router = useRouter();
-  const loggedUser = useSelector((state) => state.loggedUser.value);
-  console.log(loggedUser);
+  const loggedUser = true;
 
   const handleScroll = (e) => {
     if (e.target.scrollTop > 300) {
@@ -110,7 +109,6 @@ const Nav = () => {
         <Divider />
         <li
           onClick={() => {
-            localStorage.removeItem("currentUser");
             router.reload();
           }}
           className={Style.userMenuDropdownA}
