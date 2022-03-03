@@ -10,5 +10,4 @@ export default configureStore({
     searchQuery: searchQuery,
     currentUser: setCurrentUser,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });

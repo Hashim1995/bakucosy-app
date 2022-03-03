@@ -7,7 +7,10 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useSelector, useDispatch } from "react-redux";
 // import ReCAPTCHA from "react-google-recaptcha";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { getAuth } from "../../../utils/authentication/firebase";
 import { useRouter } from "next/router";
 import { setCurrentUser } from "../../../../redux/currentUser";
@@ -24,10 +27,21 @@ const Register = () => {
 
   const onFinish = (values) => {
     // setLoading(true);
-    createUserWithEmailAndPassword(auth, values.email, values.password);
-    auth.onAuthStateChanged((user) => {
-      dispatch(setCurrentUser(user));
-    });
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((success) => {
+        console.log("registered");
+        auth.onAuthStateChanged(() => {
+          signInWithEmailAndPassword(auth, values.email, values.password)
+            .then((success) => {
+              console.log(success);
+
+              console.log("signin after register");
+            })
+            .catch((err) => console.log(err));
+        });
+      })
+      .catch((err) => console.log(err));
+
     // setTimeout(() => {
     //   router.reload();
     // }, 1500);

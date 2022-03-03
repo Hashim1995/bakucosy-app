@@ -5,7 +5,9 @@ import { Button, Form, Input, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { reactLocalStorage } from "reactjs-localstorage";
 import { getAuth } from "../../../utils/authentication/firebase";
+import { setCurrentUser } from "../../../../redux/currentUser";
 const SignIn = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
@@ -20,9 +22,20 @@ const SignIn = () => {
   }, []);
 
   const onFinish = (values) => {
-    // setLoading(true);
+    setLoading(true);
     signInWithEmailAndPassword(auth, values.email, values.password)
-      .then((success) => console.log(success))
+      .then((val) => {
+        console.log(val.user);
+        if (typeof window !== undefined) {
+          const currentUser = {
+            isLogged: true,
+            value: val.user,
+          };
+          reactLocalStorage.setObject("loggedUser", currentUser);
+          setLoading(false);
+          router.reload();
+        }
+      })
       .catch((err) => console.log(err));
   };
 
