@@ -4,11 +4,10 @@ import { Descriptions, Badge } from "antd";
 import { useSelector } from "react-redux";
 
 const MyAccount = () => {
-  const loggedUser = useSelector((state) => state.loggedUser.value);
   return (
     <div>
       {" "}
-      <Descriptions layout="vertical" bordered>
+      {/* <Descriptions layout="vertical" bordered>
         <Descriptions.Item label="Name">
           {loggedUser.user.name}
         </Descriptions.Item>
@@ -24,7 +23,7 @@ const MyAccount = () => {
         <Descriptions.Item label="Gender">
           {loggedUser.user.gender}
         </Descriptions.Item>
-      </Descriptions>
+      </Descriptions> */}
     </div>
   );
 };

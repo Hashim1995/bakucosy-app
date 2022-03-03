@@ -7,36 +7,50 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useSelector, useDispatch } from "react-redux";
 // import ReCAPTCHA from "react-google-recaptcha";
-import { set_LoggedUser } from "../../../../redux/loggedUser";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { getAuth } from "../../../utils/authentication/firebase";
 import { useRouter } from "next/router";
+import { setCurrentUser } from "../../../../redux/currentUser";
+import { reactLocalStorage } from "reactjs-localstorage";
 const Register = () => {
   const { Option } = Select;
   const [agreementModal, setAgreementModal] = useState(false);
   const [form] = Form.useForm();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-
-  const loggedUser = useSelector((state) => state.users_DB.value);
   const dispatch = useDispatch();
-  const addToLocalStorageArray = function (name, value) {
-    let items = JSON.parse(localStorage.getItem(name)) || [];
-    items.push(value);
-    localStorage.setItem(name, JSON.stringify(items));
 
-    dispatch(set_LoggedUser({ isLogged: true, user: value }));
-
-    localStorage.setItem(
-      "currentUser",
-      JSON.stringify({ isLogged: true, user: value })
-    );
-  };
+  const auth = getAuth();
 
   const onFinish = (values) => {
-    setLoading(true);
-    addToLocalStorageArray("users_DB", values);
-    setTimeout(() => {
-      router.reload();
-    }, 1500);
+    // setLoading(true);
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((success) => {
+        console.log("registered", success);
+        auth.onAuthStateChanged(() => {
+          signInWithEmailAndPassword(auth, values.email, values.password)
+            .then((val) => {
+              if (typeof window !== undefined) {
+                const currentUser = {
+                  isLogged: true,
+                  value: val.user,
+                };
+                reactLocalStorage.setObject("loggedUser", currentUser);
+                setLoading(false);
+                router.reload();
+              }
+            })
+            .catch((err) => console.log(err));
+        });
+      })
+      .catch((err) => console.log(err));
+
+    // setTimeout(() => {
+    //   router.reload();
+    // }, 1500);
   };
 
   return (

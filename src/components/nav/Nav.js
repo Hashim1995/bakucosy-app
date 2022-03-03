@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import Link from "next/link";
 import Modal from "antd/lib/modal";
 import Dropdown from "antd/lib/dropdown";
 import Style from "./Nav.module.scss";
 import { useState } from "react";
+import { reactLocalStorage } from "reactjs-localstorage";
 import Image from "next/image";
 import { Divider, Menu } from "antd";
 import logo from "../../assets/images/logo-black.png";
@@ -21,13 +22,13 @@ import Log from "../Log/Log";
 import { useRouter } from "next/router";
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
+  const loggedUser = useSelector((state) => state.currentUser.value);
+
   const [mobileModal, setMobileModal] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [logModal, setLogModal] = useState(false);
   const [hooverCatgegory, setHooverCatgegory] = useState(false);
   const router = useRouter();
-  const loggedUser = useSelector((state) => state.loggedUser.value);
-  console.log(loggedUser);
 
   const handleScroll = (e) => {
     if (e.target.scrollTop > 300) {
@@ -47,6 +48,7 @@ const Nav = () => {
       }
     }
   };
+
   useEffect(() => {
     document.body.addEventListener("scroll", handleScroll);
     return () => document.body.removeEventListener("scroll", handleScroll);
@@ -110,7 +112,7 @@ const Nav = () => {
         <Divider />
         <li
           onClick={() => {
-            localStorage.removeItem("currentUser");
+            reactLocalStorage.remove("loggedUser");
             router.reload();
           }}
           className={Style.userMenuDropdownA}
@@ -192,7 +194,7 @@ const Nav = () => {
                   trigger={["click"]}
                 >
                   <div>
-                    {loggedUser.user.email} <PersonOutlineIcon />
+                    {loggedUser.value.email} <PersonOutlineIcon />
                   </div>
                 </Dropdown>
               ) : (
