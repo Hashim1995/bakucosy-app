@@ -14,7 +14,7 @@ import {
 import { getAuth } from "../../../utils/authentication/firebase";
 import { useRouter } from "next/router";
 import { setCurrentUser } from "../../../../redux/currentUser";
-
+import { reactLocalStorage } from "reactjs-localstorage";
 const Register = () => {
   const { Option } = Select;
   const [agreementModal, setAgreementModal] = useState(false);
@@ -29,13 +29,19 @@ const Register = () => {
     // setLoading(true);
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((success) => {
-        console.log("registered");
+        console.log("registered", success);
         auth.onAuthStateChanged(() => {
           signInWithEmailAndPassword(auth, values.email, values.password)
-            .then((success) => {
-              console.log(success);
-
-              console.log("signin after register");
+            .then((val) => {
+              if (typeof window !== undefined) {
+                const currentUser = {
+                  isLogged: true,
+                  value: val.user,
+                };
+                reactLocalStorage.setObject("loggedUser", currentUser);
+                setLoading(false);
+                router.reload();
+              }
             })
             .catch((err) => console.log(err));
         });
