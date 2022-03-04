@@ -162,11 +162,17 @@ a {
   outline: none;
   transition: var(--transition4);
   &:hover{
-      transition: var(--transition4);
-      background-color: var(--white);
-      color: var(--black);
-      border: 1px solid var(--black);
+      transition: var(--transition4) !important;
+      background-color: var(--white) !important;
+      color: var(--black) !important;
+      border: 1px solid var(--black) !important;
   }
+}
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  transition: var(--transition4) !important;
+  background-color: var(--white) !important;
+  color: var(--black) !important;
+  border: 1px solid var(--black) !important;
 }
 .white-button{
   padding: 0.2em 1.5em;
@@ -178,10 +184,10 @@ a {
   transition: var(--transition4);
   outline: none;
   &:hover{
-      transition: var(--transition4);
-      background-color: var(--black);
-      color: var(--white);
-      border: 1px solid var(--black);
+      transition: var(--transition4) !important;
+      background-color: var(--black) !important;
+      color: var(--white) !important;
+      border: 1px solid var(--black) !important;
   }
 }
 
