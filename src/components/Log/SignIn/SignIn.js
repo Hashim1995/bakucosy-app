@@ -27,7 +27,6 @@ const SignIn = () => {
     setLoading(true);
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((val) => {
-        console.log(val.user);
         if (typeof window !== undefined) {
           const currentUser = {
             isLogged: true,

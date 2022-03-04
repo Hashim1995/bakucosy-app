@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from "react";
 import Style from "./Register.module.scss";
-import { Form, Input, Select, Modal, Checkbox, Button } from "antd";
+import { message, Form, Input, Select, Modal, Checkbox, Button } from "antd";
 import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -22,14 +22,13 @@ const Register = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-
+  const [usedEmailErr, setUsedEmailErr] = useState(false);
   const auth = getAuth();
 
   const onFinish = (values) => {
-    // setLoading(true);
+    setLoading(true);
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((success) => {
-        console.log("registered", success);
         auth.onAuthStateChanged(() => {
           signInWithEmailAndPassword(auth, values.email, values.password)
             .then((val) => {
@@ -46,7 +45,20 @@ const Register = () => {
             .catch((err) => console.log(err));
         });
       })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        console.log(error.message);
+        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+          setUsedEmailErr(true);
+          message.error("This email already exists");
+          form.setFields([
+            {
+              name: "email",
+              errors: ["This email already exists"],
+            },
+          ]);
+        }
+        setLoading(false);
+      });
 
     // setTimeout(() => {
     //   router.reload();
@@ -103,7 +115,6 @@ const Register = () => {
             placeholder="Your Surname"
           />
         </Form.Item>
-
         <Form.Item
           name="email"
           label="E-mail"
