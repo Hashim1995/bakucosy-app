@@ -1,4 +1,3 @@
-import React from "react";
 import Head from "next/head";
 import MyAccount from "../../src/components/Account/MyAccount/MyAccount";
 import AccountLayout from "../../src/components/Account/AccountLayout";
