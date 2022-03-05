@@ -31,7 +31,7 @@ const AccountLayout = ({ children }) => {
                   <Link
                     onClick={() => setSelectedAccountPage("myaccount")}
                     passHref
-                    href="/account/myaccount"
+                    href="/account/mainProfile"
                   >
                     <a>
                       {" "}

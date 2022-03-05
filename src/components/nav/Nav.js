@@ -93,7 +93,7 @@ const Nav = () => {
     <div className={Style.userMenuDropdown}>
       <ul>
         <li className={Style.userMenuItem}>
-          <Link passHref href="/account/myaccount">
+          <Link passHref href="/account/mainProfile">
             <a className={Style.userMenuDropdownA}>
               {" "}
               Account <AccountCircleOutlinedIcon />
