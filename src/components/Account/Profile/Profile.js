@@ -1,13 +1,12 @@
-import React from "react";
-import Style from "./myAccount.module.scss";
+import Style from "./Profile.module.scss";
 import { Descriptions, Badge } from "antd";
 import { useSelector } from "react-redux";
 
-const MyAccount = () => {
+const Profile = () => {
   return (
     <div>
       {" "}
-      myAccount
+      <p className={Style.red}>profile comp</p>
       {/* <Descriptions layout="vertical" bordered>
         <Descriptions.Item label="Name">
           {loggedUser.user.name}
@@ -29,4 +28,4 @@ const MyAccount = () => {
   );
 };
 
-export default MyAccount;
+export default Profile;
