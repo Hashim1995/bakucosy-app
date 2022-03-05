@@ -1,5 +1,5 @@
 import Head from "next/head";
-import MyAccount from "../../src/components/Account/MyAccount/MyAccount";
+import MyAccount from "../../src/components/Account/MyAccount/MyAccount.js";
 import AccountLayout from "../../src/components/Account/AccountLayout";
 const MainProfile = () => {
   return (
