@@ -7,6 +7,7 @@ const MyAccount = () => {
   return (
     <div>
       {" "}
+      myAccount
       {/* <Descriptions layout="vertical" bordered>
         <Descriptions.Item label="Name">
           {loggedUser.user.name}
