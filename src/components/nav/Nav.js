@@ -6,7 +6,7 @@ import Style from "./Nav.module.scss";
 import { useState } from "react";
 import { reactLocalStorage } from "reactjs-localstorage";
 import Image from "next/image";
-import { Divider, Menu } from "antd";
+import { Divider } from "antd";
 import logo from "../../assets/images/logo-black.png";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -20,6 +20,8 @@ import categories from "../../utils/categories";
 import { useSelector } from "react-redux";
 import Log from "../Log/Log";
 import { useRouter } from "next/router";
+import { signOut } from "firebase/auth";
+
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
   const loggedUser = useSelector((state) => state.currentUser.value);
@@ -113,7 +115,14 @@ const Nav = () => {
         <li
           onClick={() => {
             reactLocalStorage.remove("loggedUser");
-            router.reload();
+            signOut(auth)
+              .then((res) => {
+                console.log(res);
+                router.reload();
+              })
+              .catch((err) => {
+                console.log(err);
+              });
           }}
           className={Style.userMenuDropdownA}
         >

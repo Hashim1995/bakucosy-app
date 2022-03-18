@@ -8,6 +8,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { getAuth } from "../../../utils/authentication/firebase";
 import { setCurrentUser } from "../../../../redux/currentUser";
+
 const SignIn = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
@@ -33,6 +34,7 @@ const SignIn = () => {
             value: val.user,
           };
           reactLocalStorage.setObject("loggedUser", currentUser);
+          sessionStorage.setItem("Auth Token", val._tokenResponse.refreshToken);
           setLoading(false);
           router.reload();
         }

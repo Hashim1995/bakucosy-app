@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
 
     dispatch(setCurrentUser(loggedUser));
   });
+
   return (
     <div>
       <Nav />

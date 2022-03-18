@@ -11,7 +11,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { getAuth } from "../../../utils/authentication/firebase";
+import { collection, setDoc, doc } from "firebase/firestore";
+import { db, getAuth } from "../../../utils/authentication/firebase";
 import { useRouter } from "next/router";
 import { setCurrentUser } from "../../../../redux/currentUser";
 import { reactLocalStorage } from "reactjs-localstorage";
@@ -29,7 +30,16 @@ const Register = () => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((success) => {
+        console.log(success);
         auth.onAuthStateChanged(() => {
+          const a = doc(db, "users");
+          setDoc(a, {
+            id: success.user.uid,
+            name: values.name,
+            surname: values.surname,
+            gender: values.gender,
+            number: values.number,
+          });
           signInWithEmailAndPassword(auth, values.email, values.password)
             .then((val) => {
               if (typeof window !== undefined) {

@@ -10,7 +10,7 @@ const MainProfile = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AccountLayout>
-        <Profile /> aasfaf
+        <Profile />
       </AccountLayout>
     </div>
   );
