@@ -59,7 +59,7 @@ const Register = () => {
         console.log(error.message);
         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
           setUsedEmailErr(true);
-          message.error("This email already exists");
+          message.error("Email already exists");
           form.setFields([
             {
               name: "email",
