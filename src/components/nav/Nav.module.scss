@@ -1,11 +1,10 @@
 .Nav {
-
   position: sticky;
   top: 0;
   background-color: var(--white);
   z-index: 99;
   transition: var(--transition4);
-  >div{
+  > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,70 +58,67 @@
     }
   }
 }
-.Top{
-    height: 70px;
-  .menuCenterGroup{
+.Top {
+  height: 70px;
+  .menuCenterGroup {
     display: none;
   }
- 
 }
-.categoriesOverlay{
+.categoriesOverlay {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  .categoriesOverlayItems{
+  .categoriesOverlayItems {
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0.5em 2em;
-    h4{
+    h4 {
       color: var(--grey);
-      &:hover{
+      &:hover {
         color: var(--black);
       }
     }
-   
-    img{
+
+    img {
       height: 70px;
       width: 70px;
       margin-bottom: 1em;
     }
   }
 }
-.userMenuDropdown{
+.userMenuDropdown {
   width: 200px;
   background-color: var(--white);
-  padding:  .5em 1em;
+  padding: 0.5em 1em;
   border-radius: var(--radius6);
-  box-shadow:  rgba(0, 0, 0, 0.548) 1px 2px 6px;
-  ul{
+  box-shadow: rgba(0, 0, 0, 0.548) 1px 2px 6px;
+  ul {
     padding-left: 0;
     list-style: none;
-    div{
+    div {
       margin: 15px 0;
     }
-    li{
-   
+    li {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      a{
+      a {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
       }
     }
-    .userMenuDropdownA{
-      &:hover{
+    .userMenuDropdownA {
+      &:hover {
         color: var(--black);
         cursor: pointer;
       }
     }
   }
-
 }
 @media screen and (min-width: 1130px) and (max-width: 1400px) {
   .Nav {
@@ -150,37 +146,52 @@
   }
 }
 @media screen and (max-width: 992px) {
-  .Nav{
+  .Nav {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 576px){
-  .MenuHamburgerIcon{
+@media screen  and (min-width: 576px) and (max-width: 768px) {
+  .menuCenterGroup {
+    width: 130px;
+  }
+  .menuLeftGroup,
+  .menuRightGroup {
+    div {
+      font-size: 14px !important;
+      svg{
+        margin-left: 2px !important;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .MenuHamburgerIcon {
     width: 1.2em;
     height: 1.2em;
     cursor: pointer;
   }
-  .menuRightGroup{
+  .menuRightGroup {
     justify-content: center;
-     a{
-       font-size: 1.2em;
-       margin: 0 0.5em;
-     }
+    a {
+      font-size: 1.2em;
+      margin: 0 0.5em;
+    }
   }
-  .menuLeftGroupMobile{
+  .menuLeftGroupMobile {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    a{
+    a {
       margin: 1em;
       font-size: 1.2em;
-      &:hover{
+      &:hover {
         transition: var(--transition);
         color: var(--green);
         cursor: pointer;
       }
     }
   }
-
 }

@@ -221,7 +221,6 @@ const Nav = () => {
           </>
         ) : (
           <>
-            §
             <MenuIcon
               onClick={() => setMobileModal(true)}
               className={Style.MenuHamburgerIcon}

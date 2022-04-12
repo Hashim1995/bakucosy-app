@@ -2,9 +2,9 @@
   "name": "bakucosy-app",
   "private": true,
   "scripts": {
+    "start": "next start",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -32,7 +32,10 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.43",
     "eslint": "7",
-    "eslint-config-next": "12.0.4"
+    "eslint-config-next": "12.0.4",
+    "typescript": "^4.6.3"
   }
 }
