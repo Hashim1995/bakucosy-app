@@ -75,6 +75,9 @@
     align-items: center;
     justify-content: center;
     padding: 0.5em 2em;
+    @media screen and (min-width: 576px) and (max-width: 768px) {
+      padding: 0.5em 1em;
+    }
     h4 {
       color: var(--grey);
       &:hover {
@@ -86,6 +89,10 @@
       height: 70px;
       width: 70px;
       margin-bottom: 1em;
+      @media screen and (min-width: 576px) and (max-width: 768px){
+        height: 40px;
+      width: 40px;
+      }
     }
   }
 }
@@ -165,6 +172,9 @@
       }
     }
   }
+  .navbarCategoriesOverlay{
+    top: 56px !important;
+}
 }
 @media screen and (max-width: 576px) {
   .MenuHamburgerIcon {
@@ -176,16 +186,23 @@
     justify-content: center;
     a {
       font-size: 1.2em;
-      margin: 0 0.5em;
+      margin: 0 .4em;
+      display: flex;
+      &:hover{
+        color: initial;
+
+      }
     }
+  }
+  .menuCenterGroup {
+    order: 0 !important;
   }
   .menuLeftGroupMobile {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
     a {
-      margin: 1em;
+      margin: 1em 1em 1em 0;
       font-size: 1.2em;
       &:hover {
         transition: var(--transition);

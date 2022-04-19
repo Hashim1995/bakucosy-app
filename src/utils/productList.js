@@ -114,7 +114,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and materialDesigned Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material Designed for simplicity and made from high quality materials. Its sleek geometry and material for simplicity and made from high quality materials. Its sleek geometry and material simplicity and made from high quality materials. Its sleek geometry and material   combinations creates a modern personalized look.",
       },
-      imgList: [bag_1_a, bag_1_b],
+      imgList: [
+        "https://i.ibb.co/t3MgNKf/bag-1-a.jpg",
+        "https://i.ibb.co/562brq6/bag-1-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 94,
@@ -139,7 +142,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_2_a, bag_2_b],
+      imgList: [
+        "https://i.ibb.co/cQKWYm0/bag-2-a.jpg",
+        "https://i.ibb.co/yn8vdhy/bag-2-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 74,
@@ -164,7 +170,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_3_a, bag_3_b],
+      imgList: [
+        "https://i.ibb.co/SXpVNjb/bag-3-a.jpg",
+        "https://i.ibb.co/QCLgKQX/bag-3-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 73,
@@ -189,7 +198,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_4_a, bag_4_b],
+      imgList: [
+        "https://i.ibb.co/7Q1Q4wJ/bag-4-a.jpg",
+        "https://i.ibb.co/fvX2Vys/bag-4-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 84,
@@ -214,7 +226,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_5_a, bag_5_b],
+      imgList: [
+        "https://i.ibb.co/YbJGmm4/bag-5-a.jpg",
+        "https://i.ibb.co/G2bthBs/bag-5-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 27,
@@ -239,7 +254,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_6_a, bag_6_b],
+      imgList: [
+        "https://i.ibb.co/CB7BqRr/bag-6-a.jpg",
+        "https://i.ibb.co/Jc85v4X/bag-6-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 96,
@@ -264,7 +282,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_7_a, bag_7_b],
+      imgList: [
+        "https://i.ibb.co/kmM57WC/bag-7-a.jpg",
+        "https://ibb.co/x3fRN8B",
+      ],
       isStock: true,
       isNew: true,
       popularity: 34,
@@ -289,7 +310,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_8_a, bag_8_b],
+      imgList: [
+        "https://i.ibb.co/svmN0mZ/bag-8-a.jpg",
+        "https://i.ibb.co/SmM8V0z/bag-8-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 96,
@@ -314,7 +338,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_9_a, bag_9_b],
+      imgList: [
+        "https://i.ibb.co/tYPQ4Dh/bag-9-a.jpg",
+        "https://i.ibb.co/hFWDCcx/bag-9-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 65,
@@ -339,7 +366,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_10_a, bag_10_b],
+      imgList: [
+        "https://i.ibb.co/TPyNBFg/bag-10-a.jpg",
+        "https://i.ibb.co/W31FRW7/bag-10-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 58,
@@ -364,7 +394,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [bag_11_a, bag_11_b],
+      imgList: [
+        "https://i.ibb.co/6YNy9Bt/bag-11-b.jpg",
+        "https://i.ibb.co/x8GYRY2/bag-11-a.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 34,
@@ -391,7 +424,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_1_a, dec_1_b],
+      imgList: [
+        "https://i.ibb.co/k2KNb3M/dec-1-a.jpg",
+        "https://i.ibb.co/k2KNb3M/dec-1-a.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 43,
@@ -416,7 +452,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_2_a, dec_2_b],
+      imgList: [
+        "https://i.ibb.co/z5rFGcz/dec-2-a.jpg",
+        "https://i.ibb.co/svN5XLq/dec-2-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 82,
@@ -441,7 +480,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_3_a, dec_3_b],
+      imgList: [
+        "https://i.ibb.co/jbXypBJ/dec-3-a.jpg",
+        "https://i.ibb.co/XFV2D02/dec-3-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 19,
@@ -466,7 +508,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_4_a, dec_4_b],
+      imgList: [
+        "https://i.ibb.co/Q8WWPRR/dec-4-a.jpg",
+        "https://i.ibb.co/n07X4yy/dec-4-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 41,
@@ -491,7 +536,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_5_a, dec_5_b],
+      imgList: [
+        "https://i.ibb.co/JFw00Fk/dec-5-a.jpg",
+        "https://i.ibb.co/DVv26qt/dec-5-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -516,7 +564,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_6_a, dec_6_b],
+      imgList: [
+        "https://i.ibb.co/WWdk14y/dec-6-a.jpg",
+        "https://i.ibb.co/9YHYbLM/dec-6-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 73,
@@ -541,7 +592,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_7_a, dec_7_b],
+      imgList: [
+        "https://i.ibb.co/YdJMdBm/dec-7-a.jpg",
+        "https://i.ibb.co/FqbgL9p/dec-7-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -566,7 +620,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_8_a, dec_8_b],
+      imgList: [
+        "https://i.ibb.co/tDqRMD8/dec-8-a.jpg",
+        "https://i.ibb.co/QH943kQ/dec-8-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -591,7 +648,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [dec_9_a, dec_9_b],
+      imgList: [
+        "https://i.ibb.co/K6T57nb/dec-9-a.jpg",
+        "https://i.ibb.co/ggqhJbp/dec-9-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 95,
@@ -643,7 +703,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_1_a, ess_1_b],
+      imgList: [
+        "https://i.ibb.co/PzJTxkv/ess-1-a.jpg",
+        "https://i.ibb.co/tDtYcZ1/ess-1-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 38,
@@ -668,7 +731,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_2_a, ess_2_b],
+      imgList: [
+        "https://i.ibb.co/9YsN1bB/ess-2-a.jpg",
+        "https://i.ibb.co/2KNSXJ2/ess-2-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 59,
@@ -693,7 +759,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_3_a, ess_3_b],
+      imgList: [
+        "https://i.ibb.co/qp78Tqc/ess-3-a.jpg",
+        "https://i.ibb.co/3pJh3mS/ess-3-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 20,
@@ -718,7 +787,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_4_a, ess_4_b],
+      imgList: [
+        "https://i.ibb.co/SmVyWmY/ess-4-a.jpg",
+        "https://ibb.co/9swmZ9q",
+      ],
       isStock: true,
       isNew: true,
       popularity: 95,
@@ -743,7 +815,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_5_a, ess_5_b],
+      imgList: [
+        "https://i.ibb.co/bbq2P5s/ess-5-a.jpg",
+        "https://i.ibb.co/SPr5snt/ess-5-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 56,
@@ -768,7 +843,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_6_a, ess_6_b],
+      imgList: [
+        "https://i.ibb.co/K6cqFM8/ess-6-a.jpg",
+        "https://i.ibb.co/dfw3ywp/ess-6-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 99,
@@ -793,7 +871,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_7_a, ess_7_b],
+      imgList: [
+        "https://i.ibb.co/8KqxZfF/ess-7-a.jpg",
+        "https://i.ibb.co/3MXsc5Z/ess-7-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 14,
@@ -818,7 +899,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_8_a, ess_8_b],
+      imgList: [
+        "https://i.ibb.co/m8bSvxN/ess-8-a.jpg",
+        "https://i.ibb.co/jTLFjvB/ess-8-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 87,
@@ -843,7 +927,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_9_a, ess_9_b],
+      imgList: [
+        "https://i.ibb.co/tYDPF7V/ess-9-a.jpg",
+        "https://i.ibb.co/TRq1VkG/ess-9-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -868,7 +955,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_10_a, ess_10_b],
+      imgList: [
+        "https://i.ibb.co/WkMsnDy/ess-10-a.jpg",
+        "https://i.ibb.co/Wc63hRs/ess-10-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 73,
@@ -893,7 +983,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [ess_11_a, ess_11_b],
+      imgList: [
+        "https://i.ibb.co/LQ0d7G3/ess-11-a.jpg",
+        "https://i.ibb.co/frBFNTn/ess-11-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -920,7 +1013,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_1_a, int_1_b],
+      imgList: [
+        "https://i.ibb.co/g4CfvhW/int-1-a.jpg",
+        "https://i.ibb.co/Cn1Knvm/int-1-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 77,
@@ -945,7 +1041,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_2_a, int_2_b],
+      imgList: [
+        "https://i.ibb.co/NL4Q1gq/int-2-a.jpg",
+        "https://i.ibb.co/XX1Jphs/int-2-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 45,
@@ -970,7 +1069,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_3_a, int_3_b],
+      imgList: [
+        "https://i.ibb.co/tx4sJws/int-3-a.jpg",
+        "https://i.ibb.co/3RfbtHk/int-3-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -995,7 +1097,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_3_a, int_3_b],
+      imgList: [
+        "https://i.ibb.co/W2jpbGW/int-4-a.jpg",
+        "https://i.ibb.co/9N2Wr27/int-4-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -1020,7 +1125,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_4_a, int_4_b],
+      imgList: [
+        "https://i.ibb.co/bsY6dH7/int-5-a.jpg",
+        "https://i.ibb.co/bgFGqBg/int-5-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 77,
@@ -1045,7 +1153,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_5_a, int_5_b],
+      imgList: [
+        "https://i.ibb.co/ggqhJbp/dec-9-b.jpg",
+        "https://i.ibb.co/K6T57nb/dec-9-a.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 41,
@@ -1070,7 +1181,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_6_a, int_6_b],
+      imgList: [
+        "https://i.ibb.co/5Kr8Mnf/int-7-a.jpg",
+        "https://i.ibb.co/yXNcLgC/int-7-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -1095,7 +1209,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_7_a, int_7_b],
+      imgList: [
+        "https://i.ibb.co/177TvgV/int-8-a.jpg",
+        "https://i.ibb.co/Vv5fYrv/int-8-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -1120,7 +1237,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_8_a, int_8_b],
+      imgList: [
+        "https://i.ibb.co/mCgWWxx/int-9-a.jpg",
+        "https://i.ibb.co/5jjVtT7/int-9-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -1145,7 +1265,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_9_a, int_9_b],
+      imgList: [
+        "https://i.ibb.co/r5CB0TY/int-10-a.jpg",
+        "https://i.ibb.co/r5CB0TY/int-10-a.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,
@@ -1170,7 +1293,10 @@ const productList = {
         description:
           "Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.",
       },
-      imgList: [int_10_a, int_10_b],
+      imgList: [
+        "https://i.ibb.co/BwyZ700/int-10-b.jpg",
+        "https://i.ibb.co/BwyZ700/int-10-b.jpg",
+      ],
       isStock: true,
       isNew: true,
       popularity: 67,

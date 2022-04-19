@@ -30,7 +30,7 @@ const Register = () => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((success) => {
-        console.log(success);
+        //  console.log(success);
         auth.onAuthStateChanged(() => {
           const a = doc(db, "users");
           setDoc(a, {
@@ -56,7 +56,7 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        console.log(error.message);
+        //  console.log(error.message);
         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
           setUsedEmailErr(true);
           message.error("This email already exists");

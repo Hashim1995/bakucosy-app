@@ -8,6 +8,13 @@
     .left {
       display: flex;
       justify-content: flex-start;
+      @media  screen and (max-width: 768px) {
+        width: 100%;
+        justify-content: center;
+        p{
+          font-size: 1em !important; 
+        }
+      }
       p {
         color: var(--dark-grey);
         font-size: 1.2em;
@@ -20,9 +27,6 @@
         }
       }
     }
-
-
   }
-
 }
 

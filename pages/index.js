@@ -1,19 +1,24 @@
 import Home from "./home/home";
-import { useEffect, useLayoutEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { detectDevice } from "../redux/device";
-
-export default function Index() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (window.innerWidth < 576) {
-      dispatch(detectDevice());
-    }
-  });
+import axios from "axios";
+export default function Index({ data }) {
+  console.log(data);
   return (
     <div>
       <Home />
     </div>
   );
+}
+export async function getStaticProps() {
+  // Fetch data from external API
+  const { data } = await axios.get(
+    `https://bakucosybackend.vercel.app/productlist`
+  );
+
+  return {
+    props: {
+      data: data || {},
+    },
+  };
+
+  // Pass data to the page via props
 }

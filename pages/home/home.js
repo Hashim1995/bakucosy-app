@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Carousel from "../../src/components/Carousel/Carousel";
 import Header from "../../src/components/Header/Header";
 import ItemList from "../../src/components/ItemList/ItemList";
+
 export default function Home() {
   return (
     <div>

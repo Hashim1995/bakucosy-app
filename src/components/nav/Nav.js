@@ -6,7 +6,7 @@ import Style from "./Nav.module.scss";
 import { useState } from "react";
 import { reactLocalStorage } from "reactjs-localstorage";
 import Image from "next/image";
-import { Divider } from "antd";
+import { Divider, Drawer } from "antd";
 import logo from "../../assets/images/logo-black.png";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -25,7 +25,7 @@ import { signOut } from "firebase/auth";
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
   const loggedUser = useSelector((state) => state.currentUser.value);
-
+  const [visible, setVisible] = useState(false);
   const [mobileModal, setMobileModal] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [logModal, setLogModal] = useState(false);
@@ -63,9 +63,6 @@ const Nav = () => {
       </Link>
       <Link className="menuItemOnMobile" href="/">
         Products
-      </Link>
-      <Link className="menuItemOnMobile" href="/">
-        Categories
       </Link>
       <Link className="menuItemOnMobile" href="/">
         About
@@ -117,11 +114,11 @@ const Nav = () => {
             reactLocalStorage.remove("loggedUser");
             signOut(auth)
               .then((res) => {
-                console.log(res);
+                //  console.log(res);
                 router.reload();
               })
               .catch((err) => {
-                console.log(err);
+                //   console.log(err);
               });
           }}
           className={Style.userMenuDropdownA}
@@ -160,7 +157,7 @@ const Nav = () => {
                   <Dropdown
                     onVisibleChange={() => setHooverCatgegory(true)}
                     className="navbarCategories"
-                    overlayClassName="zzzzz"
+                    overlayClassName={Style.navbarCategoriesOverlay}
                     overlay={categoriesOverlay}
                   >
                     <div>
@@ -222,17 +219,10 @@ const Nav = () => {
         ) : (
           <>
             <MenuIcon
-              onClick={() => setMobileModal(true)}
+              onClick={() => setVisible(true)}
               className={Style.MenuHamburgerIcon}
             />
-            <Modal
-              className={Style.mobileMenuModal}
-              visible={mobileModal}
-              footer={null}
-              onCancel={() => setMobileModal(false)}
-            >
-              {menuOnMobile}
-            </Modal>
+
             <div className={Style.menuCenterGroup}>
               <Link passHref={true} href="#">
                 <a>
@@ -246,9 +236,19 @@ const Nav = () => {
               </Link>
             </div>
             <div className={Style.menuRightGroup}>
-              <Link href="/login">Sign in</Link>
+              <Link href="/login">
+                <a>
+                  {" "}
+                  <AccountCircleOutlinedIcon />
+                </a>
+              </Link>
 
-              <Link href="/Cart">Cart</Link>
+              <Link href="/Cart">
+                <a>
+                  {" "}
+                  <AddShoppingCartOutlinedIcon />
+                </a>
+              </Link>
             </div>
           </>
         )}
@@ -262,6 +262,14 @@ const Nav = () => {
       >
         <Log />
       </Modal>
+      <Drawer
+        title="Menu"
+        placement="left"
+        onClose={() => setVisible(false)}
+        visible={visible}
+      >
+        {menuOnMobile}
+      </Drawer>
     </nav>
   );
 };
