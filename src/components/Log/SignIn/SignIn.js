@@ -4,9 +4,7 @@ import Style from "./SignIn.module.scss";
 import { Button, Form, Input, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { reactLocalStorage } from "reactjs-localstorage";
-import { getAuth } from "../../../utils/authentication/firebase";
 import { setCurrentUser } from "../../../../redux/currentUser";
 
 const SignIn = () => {
@@ -18,39 +16,39 @@ const SignIn = () => {
   const [errPassword, setErrPassword] = useState(false);
   const [wrong, setWrong] = useState(false);
   const dispatch = useDispatch();
-  const auth = getAuth();
+  // const auth = getAuth();
 
   useEffect(() => {
     forceUpdate({});
   }, []);
 
   const onFinish = (values) => {
-    setLoading(true);
-    signInWithEmailAndPassword(auth, values.email, values.password)
-      .then((val) => {
-        if (typeof window !== undefined) {
-          const currentUser = {
-            isLogged: true,
-            value: val.user,
-          };
-          reactLocalStorage.setObject("loggedUser", currentUser);
-          sessionStorage.setItem("Auth Token", val._tokenResponse.refreshToken);
-          setLoading(false);
-          router.reload();
-        }
-      })
-      .catch((error) => {
-        setLoading(false);
-        if (error.message === "Firebase: Error (auth/user-not-found).") {
-          setErrEmail(true);
-          setErrPassword(false);
-        } else if (error.message === "Firebase: Error (auth/wrong-password).") {
-          setErrEmail(false);
-          setErrPassword(true);
-        } else {
-          setWrong(true);
-        }
-      });
+    // setLoading(true);
+    // signInWithEmailAndPassword(auth, values.email, values.password)
+    //   .then((val) => {
+    //     if (typeof window !== undefined) {
+    //       const currentUser = {
+    //         isLogged: true,
+    //         value: val.user,
+    //       };
+    //       reactLocalStorage.setObject("loggedUser", currentUser);
+    //       sessionStorage.setItem("Auth Token", val._tokenResponse.refreshToken);
+    //       setLoading(false);
+    //       router.reload();
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     setLoading(false);
+    //     if (error.message === "Firebase: Error (auth/user-not-found).") {
+    //       setErrEmail(true);
+    //       setErrPassword(false);
+    //     } else if (error.message === "Firebase: Error (auth/wrong-password).") {
+    //       setErrEmail(false);
+    //       setErrPassword(true);
+    //     } else {
+    //       setWrong(true);
+    //     }
+    //   });
   };
 
   return (

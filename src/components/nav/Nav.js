@@ -20,7 +20,6 @@ import categories from "../../utils/categories";
 import { useSelector } from "react-redux";
 import Log from "../Log/Log";
 import { useRouter } from "next/router";
-import { signOut } from "firebase/auth";
 
 const Nav = () => {
   const mobile = useSelector((state) => state.isMobile.value);
@@ -112,14 +111,14 @@ const Nav = () => {
         <li
           onClick={() => {
             reactLocalStorage.remove("loggedUser");
-            signOut(auth)
-              .then((res) => {
-                //  console.log(res);
-                router.reload();
-              })
-              .catch((err) => {
-                //   console.log(err);
-              });
+            // signOut(auth)
+            //   .then((res) => {
+            //     //  console.log(res);
+            //     router.reload();
+            //   })
+            //   .catch((err) => {
+            //     //   console.log(err);
+            //   });
           }}
           className={Style.userMenuDropdownA}
         >
