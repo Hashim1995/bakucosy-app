@@ -8,11 +8,11 @@ import Checkbox from "antd/lib/checkbox";
 import Radio from "antd/lib/radio";
 import Tag from "antd/lib/tag";
 import { Spin } from "antd";
-import productList from "../../utils/productList";
+
 import { useSelector, useDispatch } from "react-redux";
 import { searchQuery } from "../../../redux/search";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
-const ItemList = () => {
+const ItemList = ({ data }) => {
   const dispatch = useDispatch();
   const [productAllList, setProductAllList] = useState(null);
   const [filterVisibile, setFilterVisibile] = useState(false);
@@ -37,17 +37,17 @@ const ItemList = () => {
     "Tableware",
     "Travel",
   ];
-  useEffect(() => {
-    const getFullProductList = (arr) => {
-      const arrayList = [];
-      for (let value of Object.values(arr)) {
-        arrayList.push(value);
-      }
+  // useEffect(() => {
+  //   const getFullProductList = (arr) => {
+  //     const arrayList = [];
+  //     for (let value of Object.values(arr)) {
+  //       arrayList.push(value);
+  //     }
 
-      setProductAllList(arrayList.flat());
-    };
-    getFullProductList(productList);
-  }, []);
+  //     setProductAllList(arrayList.flat());
+  //   };
+  //   //  getFullProductList(productList);
+  // }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -202,8 +202,8 @@ const ItemList = () => {
       {
         <Row gutter={24}>
           {}
-          {productAllList &&
-            productAllList.map((item, index) => (
+          {data &&
+            data.map((item, index) => (
               <Col key={index} md={8} sm={12} xs={24} xl={6}>
                 <Item data={item} />
               </Col>

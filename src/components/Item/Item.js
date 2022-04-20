@@ -17,13 +17,13 @@ const Item = ({ data }) => {
           <Image
             alt="a"
             className={Style.img1}
-            src={imgList[0].src}
+            src={imgList[0]}
             layout="fill"
           />
           <Image
             alt="a"
             className={Style.img2}
-            src={imgList[1].src}
+            src={imgList[1]}
             layout="fill"
           />
         </div>

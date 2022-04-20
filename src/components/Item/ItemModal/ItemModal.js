@@ -51,9 +51,7 @@ const ItemModal = ({ data }) => {
         <Col className={Style.right} xl={16}>
           <Slider className="itemModalSlick" {...settings}>
             {imgList.map((item, i) => {
-              return (
-                <img className={Style.carouselImg} src={item.src} key={i} />
-              );
+              return <img className={Style.carouselImg} src={item} key={i} />;
             })}
           </Slider>
         </Col>

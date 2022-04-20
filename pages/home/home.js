@@ -4,7 +4,7 @@ import Carousel from "../../src/components/Carousel/Carousel";
 import Header from "../../src/components/Header/Header";
 import ItemList from "../../src/components/ItemList/ItemList";
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <div>
       <Head>
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <Carousel />
       <Header />
-      <ItemList />
+      <ItemList data={data} />
     </div>
   );
 }
