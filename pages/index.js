@@ -16,6 +16,10 @@ export default function Index({ data }) {
           page: start,
           limit: 5,
         },
+        headers: {
+          "Access-Control-Allow-Credentials": true,
+          crossorigin: true,
+        },
       }
     );
 
@@ -33,7 +37,7 @@ export default function Index({ data }) {
 export async function getServerSideProps(context) {
   // Fetch data from external API
   const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/pagination`,
+    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/showall`,
     {
       params: {
         page: 1,
