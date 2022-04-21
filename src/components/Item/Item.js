@@ -7,12 +7,15 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 
 const Item = ({ data }) => {
-  const { id, title, imgList, price } = data;
+  const { slug, _id: id, title, imgList, price, barcode, categoryId } = data;
   const [isModalVisible, setIsModalVisible] = useState(false);
   const uuid = uuidv4();
   return (
     <div className={`${Style.wrap}`}>
-      <Link title={title} href={`/product/${[id]}`}>
+      {/* Link component */}
+      <Link scroll={true} passHref title={title} href={`/product/${slug}`}>
+        {/* Link component */}
+
         <div className={Style.top}>
           <Image
             alt="a"
@@ -30,7 +33,7 @@ const Item = ({ data }) => {
       </Link>
       <div className={Style.bottom}>
         <div className={Style.info}>
-          <Link title={title} href={`/product/${[id]}`}>
+          <Link scroll={true} passHref title={title} href={`/product/${slug}`}>
             {title}
           </Link>
           <p>{price}$</p>

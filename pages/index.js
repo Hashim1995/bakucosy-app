@@ -10,7 +10,7 @@ export default function Index({ data }) {
 export async function getStaticProps() {
   // Fetch data from external API
   const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACK_END}/productlist`
+    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/showall`
   );
 
   return {

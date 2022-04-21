@@ -34,8 +34,8 @@ const ProductDetail = ({ data }) => {
   const [qualityVal, setQualityVal] = useState(1);
   const [showMoreTags, setShowMoreTags] = useState(false);
   const images = imgList.map((item) => ({
-    original: item.src,
-    thumbnail: item.src,
+    original: item,
+    thumbnail: item,
   }));
 
   const LeftNav = React.memo(({ disabled, onClick }) => {
