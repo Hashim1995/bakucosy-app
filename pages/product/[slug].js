@@ -1,3 +1,4 @@
+import axios from "axios";
 import Head from "next/head";
 import ProductDetail from "../../src/components/ProductDetail/ProductDetail";
 const Product = ({ product }) => {
@@ -16,10 +17,9 @@ const Product = ({ product }) => {
 export default Product;
 
 export async function getStaticPaths() {
-  const res = await fetch(
+  const { data } = await axios.get(
     `${process.env.NEXT_PUBLIC_BACK_END}/productlist/showall`
   );
-  const data = await res.json();
 
   const paths = data.map((product) => {
     return {
@@ -31,10 +31,10 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps(context) {
   const slug = context.params.slug;
-  const res = await fetch(
+  const { data } = await axios.get(
     `${process.env.NEXT_PUBLIC_BACK_END}/productlist/${slug}`
   );
-  const data = await res.json();
+
   return {
     props: { product: data[0] },
   };
