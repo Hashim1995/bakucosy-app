@@ -1,47 +1,59 @@
 import Home from "./home/home";
 import axios from "axios";
-
+import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
+import { Spin, Space } from "antd";
 export default function Index({ data }) {
   const [products, setProducts] = useState(data);
   const [start, setStart] = useState(1);
-
+  const [end, setEnd] = useState(false);
   const getMoreProducts = async () => {
     setStart(start + 1);
-    const { newProducts } = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACK_END}/productlist/pagination`,
-
-      {
+    await axios
+      .get(`${process.env.NEXT_PUBLIC_BACK_END}/productlist/pagination`, {
         params: {
           page: start,
-          limit: 5,
+          limit: 4,
         },
-        headers: {
-          "Access-Control-Allow-Credentials": true,
-          crossorigin: true,
-        },
-      }
-    );
-
-    setProducts([...products, ...newProducts]);
+      })
+      .then((res) => {
+        res.data.length > 0
+          ? setProducts([...products, ...res.data])
+          : setEnd(true);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
     <div>
-      <Home data={products} />
-      <button onClick={getMoreProducts}> laod more {start}</button>
+      <InfiniteScroll
+        dataLength={products.length}
+        next={getMoreProducts}
+        hasMore={true}
+        loader={
+          <div className="container indexProductLoadingSpinner">
+            {end ? (
+              <strong>Yay! You have seen it all</strong>
+            ) : (
+              <Spin size="medium" />
+            )}
+          </div>
+        }
+      >
+        <Home data={products} />
+      </InfiniteScroll>
     </div>
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   // Fetch data from external API
   const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/showall`,
+    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/pagination`,
     {
       params: {
         page: 1,
-        limit: 5,
+        limit: 12,
       },
     }
   );
