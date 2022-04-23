@@ -16,7 +16,7 @@ export default function Index({ data }) {
   const getMoreProducts = async () => {
     setStart(start + 1);
     await axios
-      .get(`${process.env.NEXT_PUBLIC_BACK_END}/productlist/pagination`, {
+      .get(`${process.env.NEXT_PUBLIC_BACK_END}/productlist/products`, {
         params: {
           page: start,
           limit: 8,
@@ -55,7 +55,7 @@ export default function Index({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/pagination`,
+    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/products`,
     {
       params: {
         page: 1,
