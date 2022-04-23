@@ -8,11 +8,6 @@ export default function Index({ data }) {
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(false);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/productlist/alo").then((res) =>
-      console.log(res)
-    );
-  }, []);
   const getMoreProducts = async () => {
     setStart(start + 1);
     await axios
