@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
   return { paths, fallback: false };
 }
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const slug = context.params.slug;
   const { data } = await axios.get(
     `${process.env.NEXT_PUBLIC_BACK_END}/productlist/${slug}`
@@ -37,6 +37,5 @@ export async function getStaticProps(context) {
 
   return {
     props: { product: data[0] },
-    revalidate: 30,
   };
 }
