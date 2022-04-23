@@ -18,7 +18,7 @@ export default Product;
 
 export async function getStaticPaths() {
   const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACK_END}/productlist/showall`
+    `${process.env.NEXT_PUBLIC_BACK_END}/products`
   );
 
   const paths = data.map((product) => {
