@@ -27,9 +27,9 @@ export async function getStaticPaths() {
     };
   });
 
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 }
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const slug = context.params.slug;
   const { data } = await axios.get(
     `${process.env.NEXT_PUBLIC_BACK_END}/productlist/${slug}`
@@ -37,5 +37,6 @@ export async function getServerSideProps(context) {
 
   return {
     props: { product: data[0] },
+    revalidate: 30,
   };
 }
