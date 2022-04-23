@@ -32,7 +32,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const slug = context.params.slug;
   const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACK_END}/products/${slug}`
+    `${process.env.NEXT_PUBLIC_BACK_END}/product/${slug}`
   );
 
   return {
