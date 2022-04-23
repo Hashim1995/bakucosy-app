@@ -1,19 +1,25 @@
 import Home from "./home/home";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Spin, Space } from "antd";
 export default function Index({ data }) {
   const [products, setProducts] = useState(data);
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/productlist/alo").then((res) =>
+      console.log(res)
+    );
+  }, []);
   const getMoreProducts = async () => {
     setStart(start + 1);
     await axios
       .get(`${process.env.NEXT_PUBLIC_BACK_END}/productlist/pagination`, {
         params: {
           page: start,
-          limit: 4,
+          limit: 8,
         },
       })
       .then((res) => {
