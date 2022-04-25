@@ -6,7 +6,7 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { setCurrentUser } from "../../../../redux/currentUser";
-
+import axios from "axios";
 const SignIn = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
@@ -22,33 +22,32 @@ const SignIn = () => {
     forceUpdate({});
   }, []);
 
-  const onFinish = (values) => {
-    // setLoading(true);
-    // signInWithEmailAndPassword(auth, values.email, values.password)
-    //   .then((val) => {
-    //     if (typeof window !== undefined) {
-    //       const currentUser = {
-    //         isLogged: true,
-    //         value: val.user,
-    //       };
-    //       reactLocalStorage.setObject("loggedUser", currentUser);
-    //       sessionStorage.setItem("Auth Token", val._tokenResponse.refreshToken);
-    //       setLoading(false);
-    //       router.reload();
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     setLoading(false);
-    //     if (error.message === "Firebase: Error (auth/user-not-found).") {
-    //       setErrEmail(true);
-    //       setErrPassword(false);
-    //     } else if (error.message === "Firebase: Error (auth/wrong-password).") {
-    //       setErrEmail(false);
-    //       setErrPassword(true);
-    //     } else {
-    //       setWrong(true);
-    //     }
-    //   });
+  const onFinish = async (values) => {
+    await signIn(values);
+  };
+
+  const signIn = async (user) => {
+    await axios
+      .post("http://localhost:3000/login-user", values)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
+  const userFoundMiddleware = (data) => {
+    if (data.userFound) {
+      return true;
+    } else {
+      setErrEmail(true);
+      return false;
+    }
+  };
+  const passwordMiddleware = (data) => {
+    if (data.password) {
+      return true;
+    } else {
+      setErrPassword(true);
+      return false;
+    }
   };
 
   return (
@@ -75,7 +74,7 @@ const SignIn = () => {
         />
       </Form.Item>
       {errEmail && (
-        <em style={{ color: "red" }}>Your email may be incorrect</em>
+        <em style={{ color: "red" }}>The user not found, please try again</em>
       )}
       <Form.Item
         style={{ margin: "10px 0" }}

@@ -7,7 +7,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useSelector, useDispatch } from "react-redux";
 // import ReCAPTCHA from "react-google-recaptcha";
-
+import axios from "axios";
 import { useRouter } from "next/router";
 import { setCurrentUser } from "../../../../redux/currentUser";
 import { reactLocalStorage } from "reactjs-localstorage";
@@ -21,52 +21,12 @@ const Register = () => {
   const [usedEmailErr, setUsedEmailErr] = useState(false);
   // const auth = getAuth();
 
-  const onFinish = (values) => {
-    // setLoading(true);
-    // createUserWithEmailAndPassword(auth, values.email, values.password)
-    //   .then((success) => {
-    //     //  console.log(success);
-    //     auth.onAuthStateChanged(() => {
-    //       const a = doc(db, "users");
-    //       setDoc(a, {
-    //         id: success.user.uid,
-    //         name: values.name,
-    //         surname: values.surname,
-    //         gender: values.gender,
-    //         number: values.number,
-    //       });
-    //       signInWithEmailAndPassword(auth, values.email, values.password)
-    //         .then((val) => {
-    //           if (typeof window !== undefined) {
-    //             const currentUser = {
-    //               isLogged: true,
-    //               value: val.user,
-    //             };
-    //             reactLocalStorage.setObject("loggedUser", currentUser);
-    //             setLoading(false);
-    //             router.reload();
-    //           }
-    //         })
-    //         .catch((err) => console.log(err));
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     //  console.log(error.message);
-    //     if (error.message === "Firebase: Error (auth/email-already-in-use).") {
-    //       setUsedEmailErr(true);
-    //       message.error("This email already exists");
-    //       form.setFields([
-    //         {
-    //           name: "email",
-    //           errors: ["This email already exists"],
-    //         },
-    //       ]);
-    //     }
-    //     setLoading(false);
-    //   });
-    // setTimeout(() => {
-    //   router.reload();
-    // }, 1500);
+  const onFinish = async (values) => {
+    console.log(values);
+    await axios
+      .post("http://localhost:3000/create-user", values)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   return (
